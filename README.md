@@ -1,7 +1,7 @@
 # Portafolio de Matías Ramírez Torres
 
 Portafolio orientado a soporte de software y mesa de ayuda.
-Actualmente contiene una maqueta de texto en HTML y la estructura para desarrollar su diseño.
+Contiene el perfil profesional y una primera portada negra y roja con una espada de energía interactiva inspirada en Halo.
 
 ## Estructura
 
@@ -55,7 +55,10 @@ Detener el servidor con `Ctrl+C` al terminar.
 ## Estado y próximos pasos
 
 - El HTML contiene perfil, experiencia, conocimientos, formación, certificaciones y contacto.
-- CSS y JavaScript están conectados y contienen únicamente comentarios preparatorios.
-- No se han añadido imágenes, fuentes, documentos descargables ni proyectos ficticios.
-- La siguiente fase es definir y aplicar el sistema visual descrito en `docs/diseno.md`.
+- La portada usa rojo sangre (`#C92336`), fondo negro y tipografía de sistema uniforme.
+- El nombre aparece entre las hojas al activar la espada y pasa de difuminado a nítido.
+- Una captura de la Bloodblade de Halo Infinite se presenta horizontal; clic, Enter o Espacio alternan sus hojas y la iluminación ambiental. Fuente y créditos en `assets/images/FUENTES.md`.
+- La preferencia de movimiento reducido elimina las animaciones; el contenido sigue disponible sin JavaScript.
+- La imagen de la espada está incluida; no se han añadido fuentes externas, documentos descargables ni proyectos ficticios.
+- El diseño inicial y sus criterios están documentados en `docs/diseno.md`.
 - Esta estructura no configura despliegues ni publica el sitio. La publicación del entorno de desarrollo es independiente de la publicación de la web.

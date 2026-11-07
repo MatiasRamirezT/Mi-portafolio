@@ -1,29 +1,31 @@
-# Plan de diseño pendiente
+# Diseño: Bloodblade horizontal
 
-## Estado actual
+## Composición
 
-Maqueta semántica con texto. Las hojas de estilo y el script están conectados,
-pero solo contienen comentarios y no cambian la presentación ni el comportamiento.
+Fondo negro, tipografía uniforme de sistema y espada horizontal con el mango a la derecha.
+El nombre se sitúa en el hueco central entre las dos hojas. Inicialmente está oculto visualmente,
+pero permanece como encabezado semántico. El contenido profesional sigue accesible.
 
-## Decisiones para la siguiente fase
+## Recurso visual
 
-- Definir la dirección visual según el perfil de soporte de software y el público empleador.
-- Elegir una paleta de 4–6 colores con funciones claras y contraste suficiente.
-- Elegir una o dos familias tipográficas y su escala.
-- Definir anchos, espaciado, alineación y adaptación de cada sección.
-- Registrar los valores compartidos en `assets/css/tokens.css`.
-- Aplicar estilos y estados de interacción en `assets/css/main.css`.
-- Añadir movimiento solo cuando ayude a comprender una acción o aporte al concepto visual.
+Se utiliza la captura recortada de la Bloodblade de Halo Infinite documentada en
+`assets/images/FUENTES.md`. Se preservan sus colores y proporciones. Sustituye al SVG
+interpretativo anterior. El estado apagado recorta el mango con CSS: no es un modelo 3D
+ni una captura independiente del arma desactivada. La imagen pesa aproximadamente 3.6 MB.
 
-## Criterios de revisión
+## Interacción
 
-- Texto legible y navegación disponible sin JavaScript.
-- Encabezados ordenados, controles semánticos y foco de teclado visible.
-- Sin desbordamiento horizontal a 375, 768, 1024 y 1440 px.
-- Contraste mínimo de 4.5:1 para texto normal y 3:1 para texto grande.
-- Imágenes con dimensiones explícitas y alternativas de texto apropiadas.
-- Respetar `prefers-reduced-motion` y evitar esperas artificiales.
-- Verificar enlaces, recursos, consola e interacciones en navegador.
+- Clic en el mango o en el botón inferior, Enter o Espacio: activación y desactivación.
+- Las hojas se extienden desde el mango en 650 ms.
+- El nombre aparece con un desenfoque que se resuelve durante un segundo.
+- La luz ambiental roja se activa sobre la portada y el fondo de la página.
+- Una segunda pulsación apaga las hojas, oculta el nombre central y retira la luz ambiental.
+- Movimiento reducido: cambios inmediatos, sin transiciones.
+- Sin JavaScript: el perfil y la navegación funcionan, con una alternativa textual en la escena.
 
-Las guías de diseño y animación compartidas en la conversación sirven como referencia;
-sus archivos originales todavía no están incorporados a este repositorio.
+## Validación
+
+Revisado en Chromium a 375, 768, 1024 y 1440 px: sin desbordamiento horizontal,
+activación mediante ratón y teclado, nombre oculto antes de activar y visible después,
+y preferencia de movimiento reducido. El tamaño del nombre se adapta al hueco real del arma;
+en móvil queda más pequeño para preservar las proporciones horizontales solicitadas.

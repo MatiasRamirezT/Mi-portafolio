@@ -1,6 +1,15 @@
-/*
- * Sistema visual pendiente de definir.
- * Centralizar aquí colores, tipografía, espaciado, radios y movimiento
- * mediante propiedades personalizadas de CSS en :root.
- * Completar los valores después de acordar la dirección visual.
- */
+:root {
+  color-scheme: dark;
+  --color-bg: #000000;
+  --color-surface: #101013;
+  --color-text: #ededf0;
+  --color-muted: #a0a0aa;
+  --color-blood: #c92336;
+  --color-link: #f07d89;
+  --color-line: #27272e;
+  --font-body: "Segoe UI", Arial, Helvetica, sans-serif;
+  --content-width: 1200px;
+  --page-gutter: clamp(24px, 5vw, 80px);
+  --section-space: clamp(56px, 8vw, 112px);
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
