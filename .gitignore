@@ -1,0 +1,13 @@
+# Archivos locales del sistema y editores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Configuración privada local
+.env
+.env.*
+!.env.example
+
+# Salidas temporales
+*.log
