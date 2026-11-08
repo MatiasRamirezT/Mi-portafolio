@@ -8,6 +8,7 @@
     <title>Matías Ramírez Torres | Soporte de software y mesa de ayuda</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/plasma.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </head>
   <body>
@@ -36,13 +37,18 @@
           </div>
           <div class="sword-stage">
             <div class="sword-scene">
-              <img class="sword-full" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="" aria-hidden="true" fetchpriority="high">
-              <img class="sword-handle" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="" aria-hidden="true">
-              <h1 id="titulo-perfil" class="sword-name"><span>Matías Ramírez Torres</span></h1>
+              <div class="weapon-art" aria-hidden="true">
+                <img class="sword-full blade-upper" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="" fetchpriority="high">
+                <img class="sword-full blade-lower" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="">
+                <img class="sword-handle" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="">
+              </div>
+              <canvas class="plasma-canvas" aria-hidden="true"></canvas>
+              <h1 id="titulo-perfil" class="sword-name"><span>Matías</span><span>Ramírez Torres</span></h1>
               <button class="sword-button" type="button" aria-label="Activar espada de energía" aria-pressed="false" aria-describedby="sword-instruction" disabled></button>
             </div>
             <div class="sword-controls">
               <button class="sword-action" type="button" disabled>Activar espada</button>
+              <button class="plasma-toggle" type="button" aria-pressed="false" hidden>Pausar plasma</button>
               <p id="sword-instruction">Pulsa el mango para revelar mi nombre.</p>
             </div>
             <p class="sr-only" id="sword-status" role="status" aria-live="polite"></p>
