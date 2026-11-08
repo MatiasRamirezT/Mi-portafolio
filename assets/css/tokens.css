@@ -9,6 +9,8 @@
   --color-accent: #c92336;
   --color-accent-soft: #ef7782;
   --color-line: #2a2727;
+  --plasma-red: #ed3443;
+  --plasma-core: #ff9a8a;
   --font-body: "Segoe UI", Arial, Helvetica, sans-serif;
   --content-width: 1280px;
   --page-gutter: clamp(24px, 6vw, 88px);
