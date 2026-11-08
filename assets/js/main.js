@@ -16,14 +16,3 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 syncHeader();
-
-const contactForm = document.querySelector('#contact-form');
-contactForm.addEventListener('submit', event => {
-  event.preventDefault();
-  if (!contactForm.reportValidity()) return;
-  const data = new FormData(contactForm);
-  const subject = encodeURIComponent(`Mensaje de ${data.get('nombre')} desde tu portafolio`);
-  const body = encodeURIComponent(`Nombre: ${data.get('nombre')}\nCorreo: ${data.get('correo')}\n\n${data.get('mensaje')}`);
-  document.querySelector('#form-note').textContent = 'Abriendo tu aplicación de correo con el mensaje listo para revisar y enviar.';
-  window.location.href = `mailto:matias_r.m5@hotmail.com?subject=${subject}&body=${body}`;
-});
