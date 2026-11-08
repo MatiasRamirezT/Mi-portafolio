@@ -8,13 +8,12 @@
     <title>Matías Ramírez Torres | Soporte de software y mesa de ayuda</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/signal-intro.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/helmet-cloud.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <div class="reading-signal" aria-hidden="true"><span></span><i></i></div>
-
     <header class="site-header">
       <a class="brand" href="#perfil">MR<span>.</span></a>
       <nav id="menu-principal" aria-label="Navegación principal">
@@ -27,9 +26,16 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
+      <button class="language-toggle" id="language-toggle" type="button" aria-label="Cambiar a inglés">EN</button>
     </header>
 
     <main id="contenido">
+      <svg class="plasma-pathway" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+        <path class="plasma-route-glow"></path>
+        <path class="plasma-route-core" id="plasma-route"></path>
+        <path class="plasma-route-runner" pathLength="1000"></path>
+        <g class="plasma-route-nodes"></g>
+      </svg>
       <section id="perfil" aria-labelledby="titulo-perfil">
         <div class="hero hero-forge">
           <div class="hero-intro">
@@ -57,12 +63,10 @@
             <path class="plasma-ribbon plasma-ribbon-core" d="M-50 436 C118 230 178 496 340 306 S520 142 656 274 S850 444 1006 206 S1140 156 1260 74"/>
             <circle class="plasma-ember" cx="340" cy="306" r="4"/><circle class="plasma-ember" cx="656" cy="274" r="3"/><circle class="plasma-ember" cx="1006" cy="206" r="4"/>
           </svg>
-          <aside class="signal-panel" aria-label="Dos formas de investigar y resolver">
-            <div class="signal-heading"><span>SEÑAL</span><span>→</span><span>DECISIÓN</span></div>
-            <canvas class="signal-graphic" aria-hidden="true"></canvas>
-            <div class="signal-legend"><span>PERSONAS</span><span>DATOS</span></div>
-            <p>De escuchar una necesidad a leer lo que los datos revelan.</p>
-            <a href="https://github.com/MatiasRamirezT" target="_blank" rel="noreferrer">Ver perfil de GitHub</a>
+          <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
+            <canvas class="helmet-cloud" role="img" aria-label="Personaje con armadura, casco y torso, convertido en partículas rojas">
+              Personaje con armadura representado en partículas rojas.
+            </canvas>
           </aside>
         </div>
         <div class="profile-details">
