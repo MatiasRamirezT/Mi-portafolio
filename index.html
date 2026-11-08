@@ -8,14 +8,12 @@
     <title>Matías Ramírez Torres | Soporte de software y mesa de ayuda</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/plasma.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
-      <p>Matías Ramírez Torres</p>
+      <a class="brand" href="#perfil">MR<span>.</span></a>
       <nav aria-label="Navegación principal">
         <ul>
           <li><a href="#perfil">Perfil</a></li>
@@ -32,47 +30,36 @@
       <section id="perfil" aria-labelledby="titulo-perfil">
         <div class="hero hero-forge">
           <div class="hero-intro">
-            <p class="hero-context">Soporte de software &amp; mesa de ayuda</p>
-            <p class="hero-description">La tecnología tiene sentido cuando ayuda a las personas.</p>
+            <p class="hero-context">Bogotá, Colombia <span aria-hidden="true">/</span> Disponible para horarios rotativos</p>
+            <h1 id="titulo-perfil">Matías Ramírez Torres</h1>
+            <p class="hero-description">Soporte de software con atención humana y criterio técnico.</p>
+            <p class="hero-summary">Estudiante de Tecnología en Desarrollo de Software. Combino experiencia de servicio, precisión en el registro de información y formación en bases de datos.</p>
+            <div class="hero-actions"><a class="action-primary" href="#experiencia">Explorar mi experiencia</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
           </div>
-          <div class="sword-stage">
-            <div class="sword-scene">
-              <div class="weapon-art" aria-hidden="true">
-                <img class="sword-full blade-upper" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="" fetchpriority="high">
-                <img class="sword-full blade-lower" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="">
-                <img class="sword-handle" src="assets/images/halo-infinite-bloodblade.png" width="3840" height="2160" alt="">
-              </div>
-              <canvas class="plasma-canvas" aria-hidden="true"></canvas>
-              <h1 id="titulo-perfil" class="sword-name"><span>Matías</span><span>Ramírez Torres</span></h1>
-              <button class="sword-button" type="button" aria-label="Activar espada de energía" aria-pressed="false" aria-describedby="sword-instruction" disabled></button>
-            </div>
-            <div class="sword-controls">
-              <button class="sword-action" type="button" disabled>Activar espada</button>
-              <button class="plasma-toggle" type="button" aria-pressed="false" hidden>Pausar plasma</button>
-              <p id="sword-instruction">Pulsa el mango para revelar mi nombre.</p>
-            </div>
-            <p class="sr-only" id="sword-status" role="status" aria-live="polite"></p>
-            <noscript><p>Matías Ramírez Torres. La espada necesita JavaScript para activarse; el portafolio sigue disponible.</p></noscript>
-          </div>
-          <div class="hero-bottom">
-            <p class="hero-study">Estudiante de Tecnología en Desarrollo de Software.<br>Bogotá D. C., Colombia.</p>
-            <a class="text-link" href="#experiencia">Conocer mi experiencia</a>
-          </div>
+          <aside class="hero-aside" aria-label="Enfoque profesional">
+            <div class="hero-index">01 <span>—</span> Perfil</div>
+            <p>Atención al usuario</p><p>Registro y seguimiento</p><p>Resolución de incidencias</p>
+            <a href="#conocimientos">Ver conocimientos</a>
+          </aside>
         </div>
         <div class="profile-details">
-          <h2>Atención cercana. Precisión técnica.</h2>
+          <div class="section-heading"><p class="section-kicker">PERFIL</p><h2>Atención cercana.<br>Precisión técnica.</h2></div>
+          <div class="profile-copy">
         <p>Me interesa ayudar a las personas a resolver dificultades con el software. Aporto experiencia en atención al cliente, manejo preciso de información y resolución de problemas en entornos de alta demanda, junto con formación en bases de datos y SQL.</p>
         <p>Busco una oportunidad para registrar, analizar y dar seguimiento a incidentes hasta su resolución, siguiendo los procedimientos del servicio.</p>
         <p>Resido en Bogotá D. C., Colombia, y tengo disponibilidad para horarios rotativos.</p>
         <p><a href="#experiencia">Conocer mi experiencia</a> | <a href="#contacto">Contactarme</a></p>
+          </div>
         </div>
       </section>
 
       <section id="experiencia" aria-labelledby="titulo-experiencia">
-        <h2 id="titulo-experiencia">Experiencia en atención al cliente y manejo de sistemas</h2>
+        <div class="section-heading"><p class="section-kicker">TRAYECTORIA</p><h2 id="titulo-experiencia">Experiencia profesional</h2></div>
+        <div class="experience-card">
+          <div class="experience-meta"><p class="section-kicker">SERVICIO Y OPERACIONES</p><p>Marzo — octubre 2025</p><p>Bogotá, Colombia</p></div>
+          <div class="experience-content">
         <article aria-labelledby="titulo-exito">
           <h3 id="titulo-exito">Cajero en Grupo Éxito S. A.</h3>
-          <p><time datetime="2025-03">Marzo de 2025</time> a <time datetime="2025-10">octubre de 2025</time></p>
           <p>Trabajé en un entorno de turnos y alta demanda, combinando la atención directa a clientes con el registro y procesamiento de información en software especializado.</p>
           <h4>Mis responsabilidades</h4>
           <ul>
@@ -85,36 +72,39 @@
           <h4>Lo que esta experiencia aporta a mi objetivo profesional</h4>
           <p>Desarrollé precisión en el manejo de datos, pensamiento crítico y orientación al servicio. Quiero aplicar esa experiencia en un equipo de soporte: comprender la necesidad del usuario, comunicar con claridad y reconocer cuándo un caso necesita escalarse.</p>
         </article>
+        </div>
       </section>
 
       <section id="conocimientos" aria-labelledby="titulo-conocimientos">
-        <h2 id="titulo-conocimientos">Conocimientos y habilidades</h2>
-        <h3>Bases de datos y programación</h3>
+        <div class="section-heading"><p class="section-kicker">CAPACIDADES</p><h2 id="titulo-conocimientos">Herramientas para resolver.</h2></div>
+        <div class="skills-grid">
+        <div class="skill-card"><h3>Bases de datos y programación</h3>
         <ul>
           <li>Formación en MySQL y operaciones CRUD: creación, consulta, actualización y eliminación de datos.</li>
           <li>Conocimientos generales de bases de datos.</li>
           <li>Principios de programación y lógica.</li>
-        </ul>
-        <h3>Herramientas y gestión de información</h3>
+        </ul></div>
+        <div class="skill-card"><h3>Herramientas y gestión de información</h3>
         <ul>
           <li>Registro y seguimiento de solicitudes en software especializado.</li>
           <li>Manejo avanzado de Microsoft Office.</li>
           <li>Uso de Google Drive, Microsoft Teams, Zoom y Google Meet.</li>
           <li>Digitación rápida y precisa y manejo de información digital.</li>
-        </ul>
-        <h3>Atención y colaboración</h3>
+        </ul></div>
+        <div class="skill-card"><h3>Atención y colaboración</h3>
         <ul>
           <li>Orientación al servicio, comunicación efectiva y empatía.</li>
           <li>Resolución de problemas y manejo de situaciones de crisis.</li>
           <li>Organización, responsabilidad y proactividad.</li>
           <li>Trabajo en equipo, adaptabilidad y puntualidad.</li>
-        </ul>
-        <h3>Idiomas</h3>
-        <p>Formación en inglés básico para entornos laborales mediante los cursos English Do Works Beginner 1 y 2.</p>
+        </ul></div>
+        <div class="skill-card"><h3>Idiomas</h3><p>Inglés básico para entornos laborales, English Do Works Beginner 1 y 2.</p></div>
+        </div>
       </section>
 
       <section id="formacion" aria-labelledby="titulo-formacion">
-        <h2 id="titulo-formacion">Formación académica</h2>
+        <div class="section-heading"><p class="section-kicker">APRENDIZAJE</p><h2 id="titulo-formacion">Formación académica</h2></div>
+        <div class="education-grid">
         <article aria-labelledby="titulo-tecnologia">
           <h3 id="titulo-tecnologia">Tecnología en Desarrollo de Software</h3>
           <p>Universidad Agustiniana</p>
@@ -125,29 +115,33 @@
           <p>Colegio Nuestra Señora del Loreto</p>
           <p><time datetime="2018">2018</time> a <time datetime="2023">2023</time>.</p>
         </article>
+        </div>
       </section>
 
       <section id="certificaciones" aria-labelledby="titulo-certificaciones">
-        <h2 id="titulo-certificaciones">Certificaciones y formación complementaria</h2>
-        <p>Formación complementaria registrada en el SENA:</p>
-        <dl>
-          <dt>Construcción de Bases de Datos MySQL</dt>
-          <dd>Uso de MySQL y operaciones CRUD.</dd>
-          <dt>Bases de Datos Generalidades</dt>
-          <dd>Conocimientos aplicados de bases de datos.</dd>
-          <dt>Ciberseguridad Básica</dt>
-          <dd>Formación básica en ciberseguridad con Netacad.</dd>
-          <dt>English Do Works Beginner 1 y 2</dt>
-          <dd>Comunicación básica en inglés para entornos laborales.</dd>
-          <dt>Emprendimiento Innovador</dt>
-          <dd>Aplicación de ideas tecnológicas a la solución de problemas.</dd>
-          <dt>Comportamiento Emprendedor</dt>
-          <dd>Pensamiento creativo e iniciativa personal.</dd>
-        </dl>
+        <div class="section-heading"><p class="section-kicker">FORMACIÓN COMPLEMENTARIA</p><h2 id="titulo-certificaciones">Bases para seguir creciendo.</h2></div>
+        <div class="certification-grid">
+        <p class="certification-intro">Formación complementaria registrada en el SENA:</p>
+        <div class="certification-list">
+          <div class="certification-card"><dt>Construcción de Bases de Datos MySQL</dt>
+          <dd>Uso de MySQL y operaciones CRUD.</dd></div>
+          <div class="certification-card"><dt>Bases de Datos Generalidades</dt>
+          <dd>Conocimientos aplicados de bases de datos.</dd></div>
+          <div class="certification-card"><dt>Ciberseguridad Básica</dt>
+          <dd>Formación básica en ciberseguridad con Netacad.</dd></div>
+          <div class="certification-card"><dt>English Do Works Beginner 1 y 2</dt>
+          <dd>Comunicación básica en inglés para entornos laborales.</dd></div>
+          <div class="certification-card"><dt>Emprendimiento Innovador</dt>
+          <dd>Aplicación de ideas tecnológicas a la solución de problemas.</dd></div>
+          <div class="certification-card"><dt>Comportamiento Emprendedor</dt>
+          <dd>Pensamiento creativo e iniciativa personal.</dd></div>
+        </div>
+        </div>
       </section>
 
       <section id="contacto" aria-labelledby="titulo-contacto">
-        <h2 id="titulo-contacto">Hablemos de una oportunidad en soporte</h2>
+        <div class="section-heading"><p class="section-kicker">CONTACTO</p><h2 id="titulo-contacto">¿Hablamos?</h2></div>
+        <div class="contact-card">
         <p>Me interesa aportar a un equipo de soporte de software o mesa de ayuda y seguir desarrollando mis conocimientos técnicos.</p>
         <address>
           <p>Matías Ramírez Torres</p>
@@ -156,12 +150,12 @@
           <p>Teléfono: <a href="tel:+573242491425">(+57) 324 249 1425</a></p>
         </address>
         <p>Disponibilidad para horarios rotativos.</p>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>Portafolio profesional de Matías Ramírez Torres.</p>
-      <p><a href="#perfil">Volver al inicio</a></p>
+      <p>Matías Ramírez Torres · Bogotá, Colombia</p><p><a href="#perfil">Volver al inicio ↑</a></p>
     </footer>
   </body>
 </html>

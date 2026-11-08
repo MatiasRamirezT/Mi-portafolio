@@ -1,15 +1,18 @@
 :root {
   color-scheme: dark;
-  --color-bg: #000000;
-  --color-surface: #101013;
-  --color-text: #ededf0;
-  --color-muted: #a0a0aa;
-  --color-blood: #c92336;
-  --color-link: #f07d89;
-  --color-line: #27272e;
+  --color-bg: #090909;
+  --color-panel: #101010;
+  --color-panel-raised: #151313;
+  --color-text: #f1efec;
+  --color-muted: #a6a19d;
+  --color-subtle: #77716d;
+  --color-accent: #c92336;
+  --color-accent-soft: #ef7782;
+  --color-line: #2a2727;
   --font-body: "Segoe UI", Arial, Helvetica, sans-serif;
-  --content-width: 1200px;
-  --page-gutter: clamp(24px, 5vw, 80px);
-  --section-space: clamp(56px, 8vw, 112px);
+  --content-width: 1280px;
+  --page-gutter: clamp(24px, 6vw, 88px);
+  --section-space: clamp(80px, 12vw, 160px);
+  --radius-card: 8px;
   --ease-out: cubic-bezier(.22, 1, .36, 1);
 }
