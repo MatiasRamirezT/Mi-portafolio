@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Portafolio de Matías Ramírez Torres: estudiante de Tecnología en Desarrollo de Software en Bogotá, con experiencia en atención al cliente e interés en soporte de software y mesa de ayuda.">
+    <meta name="color-scheme" content="dark">
     <title>Matías Ramírez Torres | Soporte de software y mesa de ayuda</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/helmet-cloud.js" defer></script>
+
     <script src="assets/js/i18n.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
-      <a class="brand" href="#perfil">MR<span>.</span></a>
+      <a class="brand" href="#perfil" aria-label="Matías Ramírez Torres"><i class="brand-mark" aria-hidden="true"><b></b><b></b><b></b></i> MR<span>/</span> <small data-en="Portfolio">Portafolio</small></a>
+      <button class="menu-button" type="button" aria-controls="menu-principal" aria-expanded="false" hidden><span data-en="Menu">Menú</span></button>
       <nav id="menu-principal" aria-label="Navegación principal">
         <ul>
           <li><a href="#perfil">Perfil</a></li>
@@ -30,52 +32,43 @@
     </header>
 
     <main id="contenido">
-      <svg class="plasma-pathway" aria-hidden="true" focusable="false" preserveAspectRatio="none">
-        <path class="plasma-route-glow"></path>
-        <path class="plasma-route-core" id="plasma-route"></path>
-        <path class="plasma-route-runner" pathLength="1000"></path>
-        <g class="plasma-route-nodes"></g>
-      </svg>
       <section id="perfil" aria-labelledby="titulo-perfil">
-        <div class="hero hero-forge">
+        <div class="hero">
           <div class="hero-intro">
-            <p class="hero-context">Bogotá, Colombia <span aria-hidden="true">/</span> Disponible para horarios rotativos</p>
-            <h1 id="titulo-perfil"><span>Matías</span><span>Ramírez Torres</span></h1>
+            <p class="eyebrow"><span class="index-line"></span><span data-en="Software support & data">Soporte de software y datos</span></p>
+            <h1 id="titulo-perfil"><span>Matías</span><span>Ramírez</span><em>Torres<span>.</span></em></h1>
             <p class="hero-description">Entiendo los problemas.<br>Encuentro señales en los datos.</p>
-            <p class="hero-summary">Me preparo para crecer en soporte de software y análisis de datos. Aporto experiencia atendiendo personas, registrando información con precisión y formación en bases de datos y SQL.</p>
             <div class="hero-actions"><a class="action-primary" href="#proyecto">Ver proyecto destacado</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
           </div>
-          <svg class="hero-plasma" viewBox="0 0 1200 580" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="plasma-flow" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#b3182b" stop-opacity="0"/><stop offset=".28" stop-color="#ed3443" stop-opacity=".58"/><stop offset=".67" stop-color="#ff594f" stop-opacity=".34"/><stop offset="1" stop-color="#ff9a72" stop-opacity="0"/></linearGradient>
-              <linearGradient id="plasma-core" x1="0" x2="1"><stop stop-color="#ed3443" stop-opacity="0"/><stop offset=".42" stop-color="#ffb09a" stop-opacity=".9"/><stop offset="1" stop-color="#ed3443" stop-opacity="0"/></linearGradient>
-            <radialGradient id="plasma-charge"><stop stop-color="#ff6b68"/><stop offset=".34" stop-color="#ed3443"/><stop offset="1" stop-color="#790d1c" stop-opacity="0"/></radialGradient>
-            </defs>
-            <circle class="plasma-charge-aura" cx="360" cy="300" r="8"/>
-            <circle class="plasma-impact-ring" cx="360" cy="300" r="15"/>
-            <g class="plasma-shards">
-              <path d="M360 300 344 283 350 302Z"/><path d="M360 300 378 283 369 301Z"/>
-              <path d="M360 300 380 307 365 309Z"/><path d="M360 300 346 321 353 305Z"/>
-              <circle cx="360" cy="300" r="3"/>
-            </g>
-            <path class="plasma-ribbon plasma-ribbon-wide" d="M-60 418 C110 210 165 480 330 292 S520 120 650 262 S846 430 1000 194 S1130 142 1260 60"/>
-            <path class="plasma-ribbon plasma-ribbon-thin" d="M-50 454 C118 248 190 512 350 322 S520 164 662 286 S850 455 1012 220 S1150 170 1260 88"/>
-            <path class="plasma-ribbon plasma-ribbon-core" d="M-50 436 C118 230 178 496 340 306 S520 142 656 274 S850 444 1006 206 S1140 156 1260 74"/>
-            <circle class="plasma-ember" cx="340" cy="306" r="4"/><circle class="plasma-ember" cx="656" cy="274" r="3"/><circle class="plasma-ember" cx="1006" cy="206" r="4"/>
-          </svg>
-          <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
-            <canvas class="helmet-cloud" role="img" aria-label="Personaje con armadura, casco y torso, convertido en partículas rojas">
-              Personaje con armadura representado en partículas rojas.
-            </canvas>
-          </aside>
+          <div class="exhibit" role="region" aria-label="Galería de mi perfil" data-aria-en="Profile gallery">
+            <div class="art-frame" tabindex="0" aria-label="Láminas interactivas" data-aria-en="Interactive slides">
+              <div class="frame-head"><span class="slide-subject">Soporte de software</span><span class="registration" aria-hidden="true"></span></div>
+              <div class="art-field" aria-hidden="true">
+                <div class="art-layer is-current"><img src="assets/images/signal.webp" width="700" height="700" alt="" fetchpriority="high"></div>
+                <div class="art-layer"><img src="assets/images/strata.webp" width="700" height="700" alt=""></div>
+                <div class="art-layer"><img src="assets/images/link.webp" width="700" height="700" alt=""></div>
+              </div>
+              <div class="frame-foot"><span class="crosshair" aria-hidden="true">+</span><span class="progress-bars" aria-hidden="true"><i class="current"></i><i></i><i></i></span></div>
+            </div>
+            <div class="exhibit-caption">
+              <div class="slide-info"><span class="counter">01 / 03</span><span class="slide-name" data-en="Signal">Señal</span></div>
+              <div class="slide-controls" hidden>
+                <button type="button" class="prev" aria-label="Lámina anterior" data-aria-en="Previous slide"><span aria-hidden="true">‹</span></button>
+                <button type="button" class="play" aria-label="Reproducir galería" data-aria-en="Play gallery"><span aria-hidden="true">▶</span></button>
+                <button type="button" class="next" aria-label="Lámina siguiente" data-aria-en="Next slide"><span aria-hidden="true">›</span></button>
+              </div>
+            </div>
+            <span class="sr-only slide-announcement" aria-live="polite"></span>
+          </div>
         </div>
+        <div class="hero-folio"><span><i></i> Bogotá, Colombia</span><span data-en="Available for rotating shifts">Disponible para horarios rotativos</span></div>
         <div class="profile-details">
           <div class="section-heading"><p class="section-kicker">PERFIL</p><h2>Atención cercana.<br>Precisión técnica.</h2></div>
           <div class="profile-copy">
         <p>Me interesa ayudar a las personas a resolver dificultades con el software. Aporto experiencia en atención al cliente, manejo preciso de información y resolución de problemas en entornos de alta demanda, junto con formación en bases de datos y SQL.</p>
         <p>Busco una oportunidad para registrar, analizar y dar seguimiento a incidentes hasta su resolución, siguiendo los procedimientos del servicio.</p>
         <p>Resido en Bogotá D. C., Colombia, y tengo disponibilidad para horarios rotativos.</p>
-        <p><a href="#proyecto">Conocer mi perfil</a> | <a href="#contacto">Contactarme</a></p>
+        <p><a href="#proyecto">Conocer NeuroLearn IA</a> | <a href="#contacto">Contactarme</a></p>
           </div>
         </div>
       </section>
@@ -83,7 +76,7 @@
       <section id="proyecto" aria-labelledby="titulo-proyecto">
         <div class="section-heading"><p class="section-kicker">PROYECTO DESTACADO</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
         <div class="experience-card project-card">
-          <div class="experience-meta"><p class="section-kicker">PROYECTO DE GRADO · 2026</p><p>Colombia</p><p>Aplicación web instalable</p><a class="project-link" href="https://github.com/YesicaCausado/Proyecto_g" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div>
+          <div class="experience-meta"><p class="section-kicker">PROYECTO DE GRADO · 2026</p><p>Colombia</p><p>Aplicación web instalable</p><div class="project-poster" aria-hidden="true"><div class="neural-rings"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16"></i><i style="--i:17"></i><i style="--i:18"></i></div><b>N<span>/</span>IA</b></div><a class="project-link" href="https://github.com/YesicaCausado/Proyecto_g" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div>
           <div class="experience-content">
             <article aria-labelledby="titulo-neurolearn">
               <h3 id="titulo-neurolearn">Aprendizaje que se adapta a cada estudiante.</h3>

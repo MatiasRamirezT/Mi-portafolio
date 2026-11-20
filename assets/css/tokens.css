@@ -1,20 +1,15 @@
 :root {
   color-scheme: dark;
-  --color-bg: #090909;
-  --color-panel: #101010;
-  --color-panel-raised: #151313;
-  --color-text: #f1efec;
-  --color-muted: #a6a19d;
-  --color-subtle: #89837f;
-  --color-accent: #c92336;
-  --color-accent-soft: #ef7782;
-  --color-line: #2a2727;
-  --plasma-red: #ed3443;
-  --plasma-core: #ff9a8a;
-  --font-body: "Segoe UI", Arial, Helvetica, sans-serif;
-  --content-width: 1280px;
-  --page-gutter: clamp(24px, 6vw, 88px);
-  --section-space: clamp(80px, 12vw, 160px);
-  --radius-card: 8px;
-  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --black: #0c0c0d;
+  --ink: #f3f0eb;
+  --red: #ff5448;
+  --muted: #bdb9b6;
+  --rule: #393738;
+  --sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+  --gutter: clamp(1.15rem, 5vw, 5.5rem);
+  --measure: 86rem;
+  --section-pad: clamp(3.75rem, 8vw, 8rem);
+  --ease: cubic-bezier(.2,.72,.18,1);
 }
