@@ -74,13 +74,24 @@ function setLanguage(language) {
   toggle.textContent = english ? 'ES' : 'EN';
   toggle.setAttribute('aria-label', english ? englishCopy['toggle-aria'] : 'Cambiar a inglés');
   toggle.setAttribute('aria-pressed', String(english));
+  for (const el of document.querySelectorAll('[data-en], [data-aria-en]')) {
+    if (el.hasAttribute('data-en')) {
+      el.dataset.es ??= el.textContent;
+      el.textContent = english ? el.dataset.en : el.dataset.es;
+    }
+    if (el.hasAttribute('data-aria-en')) {
+      el.dataset.ariaEs ??= el.getAttribute('aria-label');
+      el.setAttribute('aria-label', english ? el.dataset.ariaEn : el.dataset.ariaEs);
+    }
+  }
   window.dispatchEvent(new Event('portfolio-language-change'));
 }
 
-const savedLanguage = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'es';
+let savedLanguage = 'es';
+try { savedLanguage = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'es'; } catch { /* Storage is optional. */ }
 setLanguage(savedLanguage);
 languageToggle.addEventListener('click', () => {
   const next = document.documentElement.lang === 'en' ? 'es' : 'en';
-  localStorage.setItem('portfolio-language', next);
+  try { localStorage.setItem('portfolio-language', next); } catch { /* Keep this session usable. */ }
   setLanguage(next);
 });
