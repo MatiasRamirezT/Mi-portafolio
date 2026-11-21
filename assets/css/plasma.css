@@ -42,41 +42,16 @@ body { isolation: isolate; }
     cursor: var(--plasma-cursor), auto;
   }
   html.plasma-pointer :where(input, textarea, [contenteditable="true"]) { cursor: text; }
-  .skill-card:hover, .skill-card:focus-within,
-  .education-grid article:hover, .certification-card:hover {
+  .skill-card:hover, .skill-card:focus-within {
     border-color: #b73949;
     box-shadow: inset 0 1px 0 #ff536026, 0 0 18px #e326390f;
   }
 }
 
-/* The moving dash and the text share the same beat. The ribbon stays behind the content. */
 .hero-forge { --intro-beat: 180ms; }
-.plasma-ribbon-core { stroke-dasharray: none; stroke-dashoffset: 0; }
-.intro-signal {
-  fill: none;
-  opacity: 0;
-  stroke-linecap: round;
-  pointer-events: none;
-}
-.intro-signal-halo {
-  stroke: #ff344c;
-  stroke-width: 5;
-  --dash-length: 10px;
-  --dash-end: -100px;
-  stroke-dasharray: var(--dash-length) 110;
-  filter: drop-shadow(0 0 6px #ff334b);
-}
-.intro-signal-tip {
-  stroke: #ffd2c6;
-  stroke-width: 2.4;
-  --dash-length: 3px;
-  --dash-end: -107px;
-  stroke-dasharray: var(--dash-length) 117;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   body::before { animation: ambient-shift 16s ease-in-out infinite alternate; }
-  .intro-signal { animation: signal-travel calc(8 * var(--intro-beat)) linear; }
   #titulo-perfil .name-letter {
     animation: neon-trace calc(2 * var(--intro-beat)) ease-out
       calc(var(--intro-beat) + var(--letter-index) * 32ms);
@@ -89,11 +64,6 @@ body { isolation: isolate; }
   .hero-actions { animation-delay: calc(5 * var(--intro-beat)); }
   .section-heading.plasma-enter { animation: plasma-entrance .5s var(--ease-out); }
   .plasma-light { transition: opacity .14s ease-out; }
-}
-@keyframes signal-travel {
-  0% { stroke-dashoffset: var(--dash-length); opacity: 0; }
-  12%, 84% { opacity: 1; }
-  100% { stroke-dashoffset: var(--dash-end); opacity: 0; }
 }
 @keyframes neon-trace {
   0%, 100% { -webkit-text-stroke-color: #ff4755; }

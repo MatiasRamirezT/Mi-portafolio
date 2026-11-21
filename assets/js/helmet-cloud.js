@@ -46,6 +46,8 @@
       point.y = (point.y / sampleSize - .5) * 2;
       point.z = (brightness - .48) * .28 + (random() - .5) * .15;
       point.color = point.red > 190 ? '#ff4054' : point.red > 90 ? '#ef3148' : '#bd2136';
+      // Frentes curvos que siguen los relieves de la armadura.
+      point.contour = Math.hypot(point.x * .85 + .32, point.y + .72) - point.z * .7;
       point.size = .78 + random() * .78;
       point.phase = random() * Math.PI * 2;
     }
@@ -98,19 +100,23 @@
     ctx.globalAlpha = .78;
     ctx.drawImage(renderImage, (width - imageSize) * .5, height * .49 - imageSize * .5, imageSize, imageSize);
     ctx.globalAlpha = 1;
+    // Cada barrido abre levemente la nube y vuelve a reunirla en su silueta.
+    const wave = fixed ? -2 : (now % 5400) / 2700 * 1.7 - .2;
     const limit = Math.min(particles.length, width < 600 ? Math.max(1100, Math.round(width * 3.5)) : Math.max(2200, Math.round(width * 5.5)));
     for (let i = 0; i < limit; i += 1) {
       const p = particles[i];
-      const rotatedX = p.x * cosine + p.z * sine;
+      const crest = Math.max(0, 1 - Math.abs(p.contour - wave) / .18);
+      const lift = crest * crest;
+      const rotatedX = p.x * cosine + (p.z + lift * .12) * sine;
       const rotatedZ = p.z * cosine - p.x * sine;
       const perspective = camera / (camera - rotatedZ);
-      const x = width * .5 + rotatedX * scale * perspective;
-      const y = height * .49 + (p.y * Math.cos(tilt) - rotatedZ * Math.sin(tilt)) * scale * perspective;
+      const x = width * .5 + (rotatedX + p.x * lift * .055) * scale * perspective;
+      const y = height * .49 + (p.y * (1 + lift * .055) * Math.cos(tilt) - rotatedZ * Math.sin(tilt)) * scale * perspective;
       if (x < -3 || x > width + 3 || y < -3 || y > height + 3) continue;
       ctx.globalAlpha = fixed ? p.alpha / 255 : (p.alpha / 255) * (.9 + Math.sin(now * .0018 + p.phase) * .1);
-      ctx.fillStyle = p.color;
+      ctx.fillStyle = lift > .55 ? '#ffc1ae' : lift > .16 ? '#ff6372' : p.color;
       ctx.beginPath();
-      ctx.arc(x, y, p.size * perspective, 0, Math.PI * 2);
+      ctx.arc(x, y, p.size * (1 + lift * .65) * perspective, 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.globalAlpha = 1;
