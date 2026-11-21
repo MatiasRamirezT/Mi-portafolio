@@ -51,18 +51,13 @@
             <defs>
               <linearGradient id="plasma-flow" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#b3182b" stop-opacity="0"/><stop offset=".28" stop-color="#ed3443" stop-opacity=".58"/><stop offset=".67" stop-color="#ff594f" stop-opacity=".34"/><stop offset="1" stop-color="#ff9a72" stop-opacity="0"/></linearGradient>
               <linearGradient id="plasma-core" x1="0" x2="1"><stop stop-color="#ed3443" stop-opacity="0"/><stop offset=".42" stop-color="#ffb09a" stop-opacity=".9"/><stop offset="1" stop-color="#ed3443" stop-opacity="0"/></linearGradient>
-            <radialGradient id="plasma-charge"><stop stop-color="#ff6b68"/><stop offset=".34" stop-color="#ed3443"/><stop offset="1" stop-color="#790d1c" stop-opacity="0"/></radialGradient>
+              <path id="intro-signal-path" pathLength="100" d="M-50 436 C118 230 178 496 340 306 S520 142 656 274 S850 444 1006 206 S1140 156 1260 74"/>
             </defs>
-            <circle class="plasma-charge-aura" cx="360" cy="300" r="8"/>
-            <circle class="plasma-impact-ring" cx="360" cy="300" r="15"/>
-            <g class="plasma-shards">
-              <path d="M360 300 344 283 350 302Z"/><path d="M360 300 378 283 369 301Z"/>
-              <path d="M360 300 380 307 365 309Z"/><path d="M360 300 346 321 353 305Z"/>
-              <circle cx="360" cy="300" r="3"/>
-            </g>
             <path class="plasma-ribbon plasma-ribbon-wide" d="M-60 418 C110 210 165 480 330 292 S520 120 650 262 S846 430 1000 194 S1130 142 1260 60"/>
             <path class="plasma-ribbon plasma-ribbon-thin" d="M-50 454 C118 248 190 512 350 322 S520 164 662 286 S850 455 1012 220 S1150 170 1260 88"/>
-            <path class="plasma-ribbon plasma-ribbon-core" d="M-50 436 C118 230 178 496 340 306 S520 142 656 274 S850 444 1006 206 S1140 156 1260 74"/>
+            <use class="plasma-ribbon plasma-ribbon-core" href="#intro-signal-path"/>
+            <use class="intro-signal intro-signal-halo" href="#intro-signal-path"/>
+            <use class="intro-signal intro-signal-tip" href="#intro-signal-path"/>
             <circle class="plasma-ember" cx="340" cy="306" r="4"/><circle class="plasma-ember" cx="656" cy="274" r="3"/><circle class="plasma-ember" cx="1006" cy="206" r="4"/>
           </svg>
           <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">

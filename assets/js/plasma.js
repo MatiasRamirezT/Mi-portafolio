@@ -3,6 +3,7 @@
   const name = [...title.children].map(line => line.textContent).join(' ');
   title.setAttribute('aria-label', name);
   const cooling = new WeakMap();
+  let letterIndex = 0;
   for (const line of title.children) {
     line.setAttribute('aria-hidden', 'true');
     const parts = document.createDocumentFragment();
@@ -14,6 +15,7 @@
       const letter = document.createElement('b');
       letter.className = 'name-letter';
       letter.textContent = char;
+      letter.style.setProperty('--letter-index', letterIndex++);
       parts.append(letter);
     }
     line.replaceChildren(parts);
