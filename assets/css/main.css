@@ -292,9 +292,27 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 .hero h1 span + span { white-space: nowrap; }
 @media (min-width: 901px) and (max-width: 1200px) { .hero h1 { font-size: clamp(64px, 7.4vw, 90px); } }
 
-/* Las pistas quedan recortadas al área de la armadura. */
+/* El circuito ocupa únicamente el margen libre a la izquierda del contenido. */
+.circuit-rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: min(110px, calc(max(var(--page-gutter), (100vw - var(--content-width)) / 2) - 8px));
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.circuit-traces {
+  position: absolute;
+  inset: 0 0 calc(-1 * var(--circuit-period, 360px));
+  background: url("../images/circuit-board.svg?v=rail-2") left top / max(44px, 100%) var(--circuit-period, 360px) repeat-y;
+  transform: translate3d(0, var(--circuit-offset, 0px), 0);
+}
+@media (prefers-reduced-motion: reduce) { .circuit-traces { transform: none; } }
+@media (forced-colors: active) { .circuit-rail { display: none; } }
+
 .helmet-stage { isolation: isolate; }
-.circuit-board { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+.helmet-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.helmet-stage.has-frame .helmet-portrait { visibility: hidden; }
 .helmet-cloud { z-index: 1; }
 
 /* Dos credenciales académicas destacadas y una colección de cursos más compacta. */
@@ -306,8 +324,8 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 .degree-panel > h3 { grid-column: 1 / -1; margin-bottom: 0; }
 .degree-panel article, .course-card { min-width: 0; border-radius: 16px; border: 1px solid #503038; }
 .degree-panel article { display: flex; flex-direction: column; align-items: flex-start; min-height: clamp(17rem, 23vw, 20rem); padding: clamp(1.45rem, 2.7vw, 2.65rem); background: radial-gradient(ellipse at 100% 0%, #60212c66, transparent 67%), #120f10; }
-.study-icon { flex: 0 0 auto; width: 1.65rem; height: 1.65rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.degree-panel .study-icon { color: #ff8995; width: 2.3rem; height: 2.3rem; margin-bottom: 1.7rem; }
+.study-icon { display: block; flex: none; width: 24px; height: 24px; max-width: 24px; max-height: 24px; }
+.degree-panel .study-icon { color: #ff8995; width: 32px; height: 32px; max-width: 32px; max-height: 32px; margin-bottom: 1.7rem; }
 .degree-panel .degree-dates { margin: auto 0 .45rem; font-size: .9rem; color: #ff9da7; }
 .degree-panel h4 { margin: 0 0 .55rem; font-size: clamp(1.8rem, 3.2vw, 3.2rem); line-height: 1.07; letter-spacing: -.05em; text-wrap: balance; }
 .degree-panel h4 + p { margin: 0; color: #c8bfc1; }
@@ -321,8 +339,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 .course-record { display: inline-flex; gap: .5rem; align-items: center; color: #ed9ba5; font-size: .9rem; font-weight: 600; margin-top: auto; }
 .course-record:not([href]):hover { color: #ed9ba5; }
 .course-record[href] { min-height: 2.75rem; text-decoration: underline; }
-.pdf-mark { position: relative; display: grid; width: 1.4rem; height: 1.7rem; align-content: end; justify-content: center; padding-bottom: .16rem; border: 1px solid currentColor; border-radius: 2px; font: 700 .47rem/1 var(--font-body); letter-spacing: .035em; clip-path: polygon(0 0, 66% 0, 100% 28%, 100% 100%, 0 100%); }
-.pdf-mark::before { content: ""; position: absolute; right: -1px; top: -1px; width: .48rem; height: .49rem; border: solid currentColor; border-width: 0 0 1px 1px; background: linear-gradient(45deg,transparent 45%,currentColor 50%,transparent 58%); }
+.pdf-mark { display: inline-block; flex: none; width: 16px; height: 20px; }
 .course-note { margin: .55rem 0 0; color: var(--color-muted); font-size: .9rem; line-height: 1.45; }
 @media (max-width: 900px) { .course-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 600px) {

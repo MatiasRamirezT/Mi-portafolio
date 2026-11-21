@@ -8,10 +8,10 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const random = (() => { let seed = 0x6d2b79f5; return () => { seed = Math.imul(seed ^ (seed >>> 15), seed | 1); seed ^= seed + Math.imul(seed ^ (seed >>> 7), seed | 61); return ((seed ^ (seed >>> 14)) >>> 0) / 4294967296; }; })();
   const particles = [];
-  const sourceImage = new Image();
+  const sourceImage = stage.querySelector('.helmet-portrait');
   const renderImage = document.createElement('canvas');
   const renderContext = renderImage.getContext('2d');
-  sourceImage.src = 'assets/images/spartan-particle-person.webp';
+  let painted = false;
   let width = 0, height = 0, dpr = 1, frame = 0, lastFrame = 0, visible = false;
   let pointerX = 0, pointerY = 0, ready = false;
   let aura = null;
@@ -23,7 +23,14 @@
     sampleCanvas.height = sampleSize;
     const sampleContext = sampleCanvas.getContext('2d', { willReadFrequently: true });
     sampleContext.drawImage(sourceImage, 0, 0, sampleSize, sampleSize);
-    const { data } = sampleContext.getImageData(0, 0, sampleSize, sampleSize);
+    let data;
+    try {
+      data = sampleContext.getImageData(0, 0, sampleSize, sampleSize).data;
+    } catch (error) {
+      // Un archivo local puede mostrarse aunque el navegador impida leer sus píxeles.
+      if (error.name === 'SecurityError') return;
+      throw error;
+    }
     const target = 7000;
     let candidates = 0;
     for (let y = 0; y < sampleSize; y += 1) {
@@ -120,6 +127,10 @@
       ctx.fill();
     }
     ctx.globalAlpha = 1;
+    if (!painted) {
+      stage.classList.add('has-frame');
+      painted = true;
+    }
   }
 
   function animate(now) {
@@ -156,5 +167,6 @@
     else requestRender();
     if (!visible) { cancelAnimationFrame(frame); frame = 0; }
   }, { rootMargin: '80px' }).observe(stage);
-  sourceImage.addEventListener('load', sampleCharacter, { once: true });
+  if (sourceImage.complete && sourceImage.naturalWidth) sampleCharacter();
+  else sourceImage.addEventListener('load', sampleCharacter, { once: true });
 })();
