@@ -1,0 +1,83 @@
+/* Plasma interactions layered on the original portfolio. */
+:root { --plasma-cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22a%22%3E%3Cstop%20stop-color%3D%22%23fff0e8%22%2F%3E%3Cstop%20offset%3D%22.15%22%20stop-color%3D%22%23ff8c88%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23ff3348%22%2F%3E%3Cstop%20offset%3D%22.4%22%20stop-color%3D%22%23fa2339%22%20stop-opacity%3D%22.78%22%2F%3E%3Cstop%20offset%3D%22.68%22%20stop-color%3D%22%23f2243c%22%20stop-opacity%3D%22.19%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f2243c%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2215%22%20fill%3D%22url(%23a)%22%2F%3E%3C%2Fsvg%3E") 16 16; }
+body { isolation: isolate; }
+
+#titulo-perfil { animation: none; }
+#titulo-perfil > span {
+  color: #000;
+  -webkit-text-stroke: clamp(1px, .12vw, 1.65px) #ff4755;
+  text-shadow: 0 0 3px #fc3149bb, 0 0 13px #ef20365b;
+}
+#titulo-perfil .name-letter {
+  color: inherit;
+  font: inherit;
+  transition: color 1.05s ease-out, text-shadow 1.05s ease-out;
+}
+#titulo-perfil .name-letter.is-lit {
+  color: #ff414f;
+  text-shadow: 0 0 4px #ff6271, 0 0 16px #fb2036aa;
+  transition-duration: 65ms;
+}
+@supports not (-webkit-text-stroke: 1px red) {
+  #titulo-perfil > span { color: #ff4755; }
+}
+
+.plasma-light {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 210px;
+  height: 210px;
+  z-index: 20;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(circle, #ff354c38, #f0253b19 35%, #e41e3009 57%, transparent 72%);
+}
+.plasma-light.is-visible { opacity: 1; }
+
+@media (any-hover: hover) and (any-pointer: fine) and (forced-colors: none) {
+  html.plasma-pointer,
+  html.plasma-pointer :where(a, button, .site-header button, .helmet-stage, .helmet-cloud, .name-letter) {
+    cursor: var(--plasma-cursor), auto;
+  }
+  html.plasma-pointer :where(input, textarea, [contenteditable="true"]) { cursor: text; }
+  .skill-card:hover, .skill-card:focus-within,
+  .education-grid article:hover, .certification-card:hover {
+    border-color: #b73949;
+    box-shadow: inset 0 1px 0 #ff536026, 0 0 18px #e326390f;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::before { animation: ambient-shift 16s ease-in-out infinite alternate; }
+  #titulo-perfil > span { animation: plasma-entrance .65s var(--ease-out) backwards; }
+  #titulo-perfil > span + span { animation-delay: .1s; }
+  .hero-intro .hero-description { animation: plasma-entrance .55s .16s var(--ease-out) backwards; }
+  .hero-intro .hero-summary { animation: plasma-entrance .55s .22s var(--ease-out) backwards; }
+  .hero-actions { animation: plasma-entrance .55s .28s var(--ease-out) backwards; }
+  .section-heading.plasma-enter { animation: plasma-entrance .5s var(--ease-out); }
+  .plasma-light { transition: opacity .14s ease-out; }
+}
+@keyframes ambient-shift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1.02); }
+  to { transform: translate3d(3%, 2%, 0) scale(1.07); }
+}
+@keyframes plasma-entrance {
+  from { opacity: .15; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 370px) {
+  #titulo-perfil > span { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #titulo-perfil .name-letter { transition: none; }
+}
+@media (forced-colors: active) {
+  #titulo-perfil > span, #titulo-perfil .name-letter {
+    color: CanvasText;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+  .plasma-light { display: none; }
+}
