@@ -41,6 +41,7 @@
             <div class="hero-actions"><a class="action-primary" href="#proyecto">Ver proyecto destacado</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
           </div>
           <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
+            <img class="circuit-board" src="assets/images/circuit-board.svg" alt="" width="520" height="480" aria-hidden="true">
             <canvas class="helmet-cloud" role="img" aria-label="Personaje con armadura, casco y torso, convertido en partículas rojas">
               Personaje con armadura representado en partículas rojas.
             </canvas>
@@ -107,14 +108,26 @@
       <section id="formacion" aria-labelledby="titulo-formacion">
         <div class="section-heading"><p class="section-kicker">FORMACIÓN</p><h2 id="titulo-formacion">Estudios y cursos</h2></div>
         <div class="study-layout">
+          <svg class="study-symbols" aria-hidden="true" focusable="false" width="0" height="0"><defs>
+            <symbol id="study-degree" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM5.5 11v5c4 3 9 3 13 0v-5M22 9v7"/></symbol>
+            <symbol id="study-book" viewBox="0 0 24 24"><path d="M3 5c3-1 6-.5 9 2 3-2.5 6-3 9-2v14c-3-1-6-.5-9 2-3-2.5-6-3-9-2zM12 7v14"/></symbol>
+            <symbol id="study-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 4 16 4 16 0v-13M4 12c0 4 16 4 16 0"/></symbol>
+            <symbol id="study-tables" viewBox="0 0 24 24"><rect x="2" y="3" width="11" height="8" rx="1.5"/><rect x="12" y="14" width="10" height="7" rx="1.5"/><path d="M2 6h11M12 17h10M6 11v6h6"/></symbol>
+            <symbol id="study-shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="m8.5 11.5 2.5 2.5 5-5"/></symbol>
+            <symbol id="study-speech" viewBox="0 0 24 24"><path d="M3 4h18v12H9l-6 5zM7 8h10M7 12h7"/></symbol>
+            <symbol id="study-idea" viewBox="0 0 24 24"><path d="M8.5 16c0-3-3-3.5-3-7a6.5 6.5 0 0 1 13 0c0 3.5-3 4-3 7zM9 19h6M10 22h4"/></symbol>
+            <symbol id="study-growth" viewBox="0 0 24 24"><path d="M3 4v16h18M6 15l5-5 4 2 6-7M16 5h5v5"/></symbol>
+          </defs></svg>
           <div class="degree-panel">
             <h3 id="titulo-estudios">Formación académica</h3>
             <article class="degree-feature">
+              <svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-degree"/></svg>
               <p class="degree-dates">Desde <time datetime="2024">2024</time> · En curso</p>
               <h4 id="titulo-tecnologia">Tecnología en Desarrollo de Software</h4>
               <p>Universidad Agustiniana</p>
             </article>
             <article class="degree-secondary">
+              <svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-book"/></svg>
               <p class="degree-dates"><time datetime="2018">2018</time> — <time datetime="2023">2023</time></p>
               <h4 id="titulo-bachillerato">Bachiller académico</h4>
               <p>Colegio Nuestra Señora del Loreto</p>
@@ -125,40 +138,46 @@
             <!-- Al publicar cada certificado, añade href con la ruta de su PDF al enlace .course-record correspondiente. -->
             <ul class="course-list">
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">Construcción de Bases de Datos MySQL</strong><span class="course-note">Uso de MySQL y operaciones CRUD.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-database"/></svg><h4 class="course-title">Construcción de Bases de Datos MySQL</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Uso de MySQL y operaciones CRUD.</p>
+                </article>
               </li>
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">Bases de Datos Generalidades</strong><span class="course-note">Conocimientos aplicados de bases de datos.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-tables"/></svg><h4 class="course-title">Bases de Datos Generalidades</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Conocimientos aplicados de bases de datos.</p>
+                </article>
               </li>
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">Ciberseguridad Básica</strong><span class="course-note">Formación básica en ciberseguridad con Netacad.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-shield"/></svg><h4 class="course-title">Ciberseguridad Básica</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Formación básica en ciberseguridad con Netacad.</p>
+                </article>
               </li>
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">English Do Works Beginner 1 y 2</strong><span class="course-note">Comunicación básica en inglés para entornos laborales.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 class="course-title">English Do Works Beginner 1 y 2</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Comunicación básica en inglés para entornos laborales.</p>
+                </article>
               </li>
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">Emprendimiento Innovador</strong><span class="course-note">Aplicación de ideas tecnológicas a la solución de problemas.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-idea"/></svg><h4 class="course-title">Emprendimiento Innovador</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Aplicación de ideas tecnológicas a la solución de problemas.</p>
+                </article>
               </li>
               <li>
-                <a class="course-record">
-                  <span class="pdf-mark" aria-hidden="true">PDF</span>
-                  <span><strong class="course-title">Comportamiento Emprendedor</strong><span class="course-note">Pensamiento creativo e iniciativa personal.</span></span>
-                </a>
+                <article class="course-card">
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#study-growth"/></svg><h4 class="course-title">Comportamiento Emprendedor</h4></div>
+                  <a class="course-record"><span class="pdf-mark" aria-hidden="true">PDF</span><span class="pdf-label">PDF pendiente</span></a>
+                  <p class="course-note">Pensamiento creativo e iniciativa personal.</p>
+                </article>
               </li>
             </ul>
           </div>

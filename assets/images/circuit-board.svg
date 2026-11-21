@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" fill="none">
+  <defs>
+    <radialGradient id="bloom"><stop stop-color="#f8324f" stop-opacity=".32"/><stop offset="1" stop-color="#a61530" stop-opacity="0"/></radialGradient>
+    <pattern id="pads" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".85" fill="#c85166" opacity=".3"/></pattern>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <path id="trace-0" d="M4 36h39l57 57v25l43 43h44" pathLength="100"/>
+    <path id="trace-1" d="M4 48h33l54 54v25l43 43h53" pathLength="100"/>
+    <path id="trace-2" d="M4 60h27l51 51v25l43 43h53" pathLength="100"/>
+    <path id="trace-3" d="M4 88h23l42 42v21l35 35h46" pathLength="100"/>
+    <path id="trace-4" d="M4 113h15l37 37v18l33 33h36" pathLength="100"/>
+    <path id="trace-5" d="M25 6v10l48 48h20l37 37v19l22 22" pathLength="100"/>
+    <path id="trace-6" d="M49 6l45 45h21l33 33v26l20 20" pathLength="100"/>
+    <path id="trace-7" d="M77 6l26 26h23l38 38v28" pathLength="100"/>
+    <path id="trace-8" d="M108 6l11 11h23l39 39v22" pathLength="100"/>
+    <path id="trace-9" d="M506 30h-47l-30 30h-23" pathLength="100"/>
+    <path id="trace-10" d="M512 44h-45l-28 28h-33" pathLength="100"/>
+    <path id="trace-11" d="M516 58h-41l-27 27h-42" pathLength="100"/>
+    <path id="trace-12" d="M516 83h-31l-24 24h-25l-23 23h-45" pathLength="100"/>
+    <path id="trace-13" d="M516 102h-22l-21 21h-29l-25 25h-42" pathLength="100"/>
+    <path id="trace-14" d="M516 135h-17l-29 29h-30l-41 41" pathLength="100"/>
+    <path id="trace-15" d="M391 5v15l-11 11v18" pathLength="100"/>
+    <path id="trace-16" d="M365 5v15l-10 10v19" pathLength="100"/>
+    <path id="trace-17" d="M349 5h-9l-13 13v11l-13 13h-19" pathLength="100"/>
+    <path id="trace-18" d="M342 64h-30l-30 30h-25" pathLength="100"/>
+    <path id="trace-19" d="M342 78h-25l-30 30h-27" pathLength="100"/>
+    <path id="trace-20" d="M342 92h-17l-30 30h-31" pathLength="100"/>
+    <path id="trace-21" d="M4 424h30l36-36v-41l41-41v-18" pathLength="100"/>
+    <path id="trace-22" d="M4 440h36l42-42v-43l41-41v-21" pathLength="100"/>
+    <path id="trace-23" d="M4 457h41l49-49v-45l41-41v-16" pathLength="100"/>
+    <path id="trace-24" d="M31 476h22l54-54v-25l42-42h28" pathLength="100"/>
+    <path id="trace-25" d="M62 476h12l45-45v-18l42-42h35" pathLength="100"/>
+    <path id="trace-26" d="M516 375h-24l-28-28h-24l-33-33" pathLength="100"/>
+    <path id="trace-27" d="M516 396h-28l-34-34h-24l-32-32" pathLength="100"/>
+    <path id="trace-28" d="M516 417h-32l-41-41h-25l-29-29" pathLength="100"/>
+    <path id="trace-29" d="M491 472v-18l-52-52h-24l-34-34" pathLength="100"/>
+    <path id="trace-30" d="M471 475v-12l-49-49h-15l-34-34" pathLength="100"/>
+  </defs>
+  <style>
+    .tracks { stroke: #de495e; opacity: .62; stroke-width: 1.1; }
+    .signal { stroke: #ffb3ac; stroke-width: 2.5; stroke-dasharray: 8 112; stroke-dashoffset: 8; opacity: 0; }
+    .chip { fill: #270f17; stroke: #ff7282; stroke-width: 1.4; }
+    @media (prefers-reduced-motion: no-preference) {
+      .signal { animation: transmit 4s linear infinite; animation-delay: var(--phase); }
+      .core { animation: breathe 3s ease-in-out infinite alternate; }
+    }
+    @keyframes transmit { 0% { stroke-dashoffset: 8; opacity: 0; } 7%, 64% { opacity: 1; } 75%,100% { stroke-dashoffset: -100; opacity: 0; } }
+    @keyframes breathe { from { opacity: .42; } to { opacity: 1; } }
+  </style>
+  <rect width="520" height="480" fill="url(#pads)"/>
+  <ellipse cx="370" cy="78" rx="118" ry="88" fill="url(#bloom)"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <g class="tracks">
+      <use href="#trace-0"/>
+      <use href="#trace-1"/>
+      <use href="#trace-2"/>
+      <use href="#trace-3"/>
+      <use href="#trace-4"/>
+      <use href="#trace-5"/>
+      <use href="#trace-6"/>
+      <use href="#trace-7"/>
+      <use href="#trace-8"/>
+      <use href="#trace-9"/>
+      <use href="#trace-10"/>
+      <use href="#trace-11"/>
+      <use href="#trace-12"/>
+      <use href="#trace-13"/>
+      <use href="#trace-14"/>
+      <use href="#trace-15"/>
+      <use href="#trace-16"/>
+      <use href="#trace-17"/>
+      <use href="#trace-18"/>
+      <use href="#trace-19"/>
+      <use href="#trace-20"/>
+      <use href="#trace-21"/>
+      <use href="#trace-22"/>
+      <use href="#trace-23"/>
+      <use href="#trace-24"/>
+      <use href="#trace-25"/>
+      <use href="#trace-26"/>
+      <use href="#trace-27"/>
+      <use href="#trace-28"/>
+      <use href="#trace-29"/>
+      <use href="#trace-30"/>
+    </g>
+    <g>
+      <use class="signal" href="#trace-0" style="--phase:-0.00s"/>
+      <use class="signal" href="#trace-2" style="--phase:-1.32s"/>
+      <use class="signal" href="#trace-4" style="--phase:-2.64s"/>
+      <use class="signal" href="#trace-6" style="--phase:-3.96s"/>
+      <use class="signal" href="#trace-8" style="--phase:-1.28s"/>
+      <use class="signal" href="#trace-9" style="--phase:-2.60s"/>
+      <use class="signal" href="#trace-11" style="--phase:-3.92s"/>
+      <use class="signal" href="#trace-13" style="--phase:-1.24s"/>
+      <use class="signal" href="#trace-15" style="--phase:-2.56s"/>
+      <use class="signal" href="#trace-17" style="--phase:-3.88s"/>
+      <use class="signal" href="#trace-18" style="--phase:-1.20s"/>
+      <use class="signal" href="#trace-20" style="--phase:-2.52s"/>
+      <use class="signal" href="#trace-22" style="--phase:-3.84s"/>
+      <use class="signal" href="#trace-24" style="--phase:-1.16s"/>
+      <use class="signal" href="#trace-26" style="--phase:-2.48s"/>
+      <use class="signal" href="#trace-28" style="--phase:-3.80s"/>
+      <use class="signal" href="#trace-30" style="--phase:-1.12s"/>
+    </g>
+  </g>
+  <g fill="#1a0910" stroke="#ff7485" stroke-width="1.15">
+    <circle cx="187" cy="161" r="3.7"/>
+    <circle cx="187" cy="170" r="2.3"/>
+    <circle cx="178" cy="179" r="2.3"/>
+    <circle cx="150" cy="186" r="2.3"/>
+    <circle cx="125" cy="201" r="3.7"/>
+    <circle cx="152" cy="142" r="2.3"/>
+    <circle cx="168" cy="130" r="2.3"/>
+    <circle cx="164" cy="98" r="2.3"/>
+    <circle cx="181" cy="78" r="3.7"/>
+    <circle cx="257" cy="94" r="2.3"/>
+    <circle cx="260" cy="108" r="2.3"/>
+    <circle cx="264" cy="122" r="2.3"/>
+    <circle cx="295" cy="42" r="3.7"/>
+    <circle cx="368" cy="130" r="2.3"/>
+    <circle cx="377" cy="148" r="2.3"/>
+    <circle cx="399" cy="205" r="2.3"/>
+    <circle cx="111" cy="288" r="3.7"/>
+    <circle cx="123" cy="293" r="2.3"/>
+    <circle cx="135" cy="306" r="2.3"/>
+    <circle cx="177" cy="355" r="2.3"/>
+    <circle cx="196" cy="371" r="3.7"/>
+    <circle cx="407" cy="314" r="2.3"/>
+    <circle cx="398" cy="330" r="2.3"/>
+    <circle cx="389" cy="347" r="2.3"/>
+    <circle cx="381" cy="368" r="3.7"/>
+    <circle cx="373" cy="380" r="2.3"/>
+  </g>
+  <g class="chip">
+    <rect x="342" y="49" width="64" height="53" rx="6"/>
+    <rect x="349" y="56" width="50" height="39" rx="3" stroke-opacity=".46"/>
+    <path d="M363 66h16l8 8v7l-6 6h-18l-5-5V71z" fill="#892439"/>
+  </g>
+  <g class="core" fill="#ffa7a5">
+    <rect x="364" y="70" width="17" height="12" rx="2" filter="url(#glow)"/>
+    <path d="M364 72h13l4 4v4h-17z"/>
+  </g>
+</svg>

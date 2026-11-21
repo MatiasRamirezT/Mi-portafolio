@@ -70,6 +70,12 @@ function setLanguage(language) {
       else element.innerHTML = value;
     }
   }
+  for (const link of document.querySelectorAll('.course-record')) {
+    const label = link.hasAttribute('href')
+      ? (english ? 'View PDF' : 'Ver PDF')
+      : (english ? 'PDF pending' : 'PDF pendiente');
+    link.querySelector('.pdf-label').textContent = label;
+  }
   const toggle = document.querySelector('#language-toggle');
   toggle.textContent = english ? 'ES' : 'EN';
   toggle.setAttribute('aria-label', english ? englishCopy['toggle-aria'] : 'Cambiar a inglés');
