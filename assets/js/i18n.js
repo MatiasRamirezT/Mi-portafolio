@@ -25,9 +25,17 @@ const englishCopy = {
   'skills-kicker': 'CAPABILITIES', 'skills-heading': 'Tools for solving problems.',
   'skill-db': 'Databases and programming', 'skill-db-1': 'Training in MySQL and CRUD operations: creating, reading, updating and deleting data.', 'skill-db-2': 'General database knowledge.', 'skill-db-3': 'Programming fundamentals and logic.',
   'skill-tools': 'Tools and information management', 'skill-tools-1': 'Recording and tracking requests in specialized software.', 'skill-tools-2': 'Advanced Microsoft Office skills.', 'skill-tools-3': 'Experience with Google Drive, Microsoft Teams, Zoom and Google Meet.', 'skill-tools-4': 'Fast, accurate typing and digital information management.',
-  'skill-service': 'Customer service and collaboration', 'skill-service-1': 'Service orientation, effective communication and empathy.', 'skill-service-2': 'Problem solving and handling challenging situations.', 'skill-service-3': 'Organization, accountability and initiative.', 'skill-service-4': 'Teamwork, adaptability and punctuality.', 'skill-languages': 'Languages', 'skill-language-copy': 'Basic English for work settings; English Do Works Beginner 1 and 2.',
+  'skill-service': 'Customer service and collaboration', 'skill-service-1': 'Service orientation, effective communication and empathy.', 'skill-service-2': 'Problem solving and handling challenging situations.', 'skill-service-3': 'Organization, accountability and initiative.', 'skill-service-4': 'Teamwork, adaptability and punctuality.', 'skill-languages': 'Languages', 'skill-language-copy': 'B2 English on the EF SET (53/100 in reading and listening).',
   'education-kicker': 'EDUCATION', 'education-heading': 'Studies and courses', 'degree-heading': 'Academic education', 'education-degree': 'Software Development Technology', 'education-university': 'Universidad Agustiniana', 'education-current': 'Since <time datetime="2024">2024</time> · In progress', 'education-school': 'High school diploma', 'education-school-name': 'Colegio Nuestra Señora del Loreto',
-  'cert-heading': 'SENA courses', 'cert-db': 'MySQL Database Development', 'cert-db-copy': 'MySQL and CRUD operations.', 'cert-db-general': 'Database Fundamentals', 'cert-db-general-copy': 'Applied database concepts.', 'cert-security': 'Cybersecurity Basics', 'cert-security-copy': 'Introductory cybersecurity training with Netacad.', 'cert-english': 'English Do Works Beginner 1 and 2', 'cert-english-copy': 'Basic English communication for work.', 'cert-innovative': 'Innovative Entrepreneurship', 'cert-innovative-copy': 'Applying technology ideas to solve problems.', 'cert-entrepreneur': 'Entrepreneurial Mindset', 'cert-entrepreneur-copy': 'Creative thinking and personal initiative.',
+  'cert-heading': 'Courses and certifications',
+  'cert-mysql': 'Building databases with MySQL', 'cert-mysql-copy': 'SENA · 48 hours · 2026',
+  'cert-general': 'Database fundamentals and management systems', 'cert-general-copy': 'SENA · 40 hours · 2026',
+  'cert-security': 'Cybersecurity Basics', 'cert-security-copy': 'Introductory cybersecurity training with Netacad.',
+  'cert-beginner': 'English Dot Works Beginner', 'cert-beginner-copy': 'SENA · 60 hours · 2022',
+  'cert-english1': 'English Dot Works 1', 'cert-english1-copy': 'SENA · 60 hours · 2022',
+  'cert-ef': 'EF SET · B2 English', 'cert-ef-copy': 'EF SET · 53/100 in reading and listening · 2025',
+  'cert-innovation': 'Innovative Entrepreneurship', 'cert-innovation-copy': 'SENA · 40 hours · 2022',
+  'cert-business': 'Entrepreneurial Mindset', 'cert-business-copy': 'SENA · 48 hours · 2023',
   'contact-kicker': 'CONTACT', 'contact-heading': 'Let’s talk.', 'contact-copy': 'I am looking for opportunities in databases, information management and data analysis. I am also interested in projects where I can continue learning backend development.', 'availability': 'Bogotá, Colombia <span aria-hidden="true">·</span> Available for rotating shifts', 'contact-methods-aria': 'Contact methods', 'email-label': 'Direct email', 'github-label': 'GitHub',
   'footer-back': 'Back to top ↑',
 };
@@ -40,7 +48,15 @@ const selectors = {
   'project-kicker': ['#proyecto > .section-heading .section-kicker'], 'project-meta': ['.experience-meta .section-kicker'], 'project-country': ['.experience-meta p:nth-child(2)'], 'project-pwa': ['.experience-meta p:nth-child(3)'], 'project-repo': ['.project-link'], 'project-title': ['#titulo-neurolearn'], 'project-copy': ['#titulo-neurolearn + p'], 'project-feature-1': ['.project-highlights > div:nth-child(1) p'], 'project-feature-2': ['.project-highlights > div:nth-child(2) p'], 'project-feature-3': ['.project-highlights > div:nth-child(3) p'], 'project-contribution': ['.project-contribution'], 'project-tech-aria': ['.project-stack'],
   'skills-kicker': ['#conocimientos .section-kicker'], 'skills-heading': ['#titulo-conocimientos'], 'skill-db': ['.skill-card:nth-child(1) h3'], 'skill-db-1': ['.skill-card:nth-child(1) li:nth-child(1)'], 'skill-db-2': ['.skill-card:nth-child(1) li:nth-child(2)'], 'skill-db-3': ['.skill-card:nth-child(1) li:nth-child(3)'], 'skill-tools': ['.skill-card:nth-child(2) h3'], 'skill-tools-1': ['.skill-card:nth-child(2) li:nth-child(1)'], 'skill-tools-2': ['.skill-card:nth-child(2) li:nth-child(2)'], 'skill-tools-3': ['.skill-card:nth-child(2) li:nth-child(3)'], 'skill-tools-4': ['.skill-card:nth-child(2) li:nth-child(4)'], 'skill-service': ['.skill-card:nth-child(3) h3'], 'skill-service-1': ['.skill-card:nth-child(3) li:nth-child(1)'], 'skill-service-2': ['.skill-card:nth-child(3) li:nth-child(2)'], 'skill-service-3': ['.skill-card:nth-child(3) li:nth-child(3)'], 'skill-service-4': ['.skill-card:nth-child(3) li:nth-child(4)'], 'skill-languages': ['.skill-card:nth-child(4) h3'], 'skill-language-copy': ['.skill-card:nth-child(4) > p'],
   'education-kicker': ['#formacion .section-kicker'], 'education-heading': ['#titulo-formacion'], 'degree-heading': ['#titulo-estudios'], 'education-degree': ['#titulo-tecnologia'], 'education-university': ['#titulo-tecnologia + p'], 'education-current': ['.degree-feature .degree-dates'], 'education-school': ['#titulo-bachillerato'], 'education-school-name': ['#titulo-bachillerato + p'],
-  'cert-heading': ['#titulo-certificaciones'], 'cert-db': ['.course-list li:nth-child(1) .course-title'], 'cert-db-copy': ['.course-list li:nth-child(1) .course-note'], 'cert-db-general': ['.course-list li:nth-child(2) .course-title'], 'cert-db-general-copy': ['.course-list li:nth-child(2) .course-note'], 'cert-security': ['.course-list li:nth-child(3) .course-title'], 'cert-security-copy': ['.course-list li:nth-child(3) .course-note'], 'cert-english': ['.course-list li:nth-child(4) .course-title'], 'cert-english-copy': ['.course-list li:nth-child(4) .course-note'], 'cert-innovative': ['.course-list li:nth-child(5) .course-title'], 'cert-innovative-copy': ['.course-list li:nth-child(5) .course-note'], 'cert-entrepreneur': ['.course-list li:nth-child(6) .course-title'], 'cert-entrepreneur-copy': ['.course-list li:nth-child(6) .course-note'],
+  'cert-heading': ['#titulo-certificaciones'],
+  'cert-mysql': ['#nombre-mysql'], 'cert-mysql-copy': ['#curso-mysql .course-note'],
+  'cert-general': ['#nombre-general'], 'cert-general-copy': ['#curso-general .course-note'],
+  'cert-security': ['#nombre-security'], 'cert-security-copy': ['#curso-security .course-note'],
+  'cert-beginner': ['#nombre-beginner'], 'cert-beginner-copy': ['#curso-beginner .course-note'],
+  'cert-english1': ['#nombre-english1'], 'cert-english1-copy': ['#curso-english1 .course-note'],
+  'cert-ef': ['#nombre-ef'], 'cert-ef-copy': ['#curso-ef .course-note'],
+  'cert-innovation': ['#nombre-innovation'], 'cert-innovation-copy': ['#curso-innovation .course-note'],
+  'cert-business': ['#nombre-business'], 'cert-business-copy': ['#curso-business .course-note'],
   'contact-kicker': ['#contacto .section-kicker'], 'contact-heading': ['#titulo-contacto'], 'contact-copy': ['.contact-intro > p:first-child'], availability: ['.contact-location'], 'contact-methods-aria': ['.contact-methods'], 'email-label': ['.contact-method:first-child .contact-label'], 'github-label': ['.contact-method:last-child .contact-label'], 'footer-back': ['footer a[href="#perfil"]'],
 };
 const originalValues = new Map();
@@ -72,7 +88,7 @@ function setLanguage(language) {
   }
   for (const link of document.querySelectorAll('.course-record')) {
     const label = link.hasAttribute('href')
-      ? (english ? 'View PDF' : 'Ver PDF')
+      ? (english ? 'Download PDF' : 'Descargar PDF')
       : (english ? 'PDF pending' : 'PDF pendiente');
     link.querySelector('.pdf-label').textContent = label;
   }

@@ -292,19 +292,20 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 .hero h1 span + span { white-space: nowrap; }
 @media (min-width: 901px) and (max-width: 1200px) { .hero h1 { font-size: clamp(64px, 7.4vw, 90px); } }
 
-/* El circuito ocupa únicamente el margen libre a la izquierda del contenido. */
+/* La trama cubre el fondo; los paneles de contenido se pintan delante. */
 .circuit-rail {
   position: fixed;
-  inset: 0 auto 0 0;
-  width: min(110px, calc(max(var(--page-gutter), (100vw - var(--content-width)) / 2) - 8px));
+  inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
+  opacity: .19;
+  mask-image: linear-gradient(105deg, #000 0%, #0009 38%, #0008 65%, #000c 100%);
 }
 .circuit-traces {
   position: absolute;
   inset: 0 0 calc(-1 * var(--circuit-period, 360px));
-  background: url("../images/circuit-board.svg?v=rail-2") left top / max(44px, 100%) var(--circuit-period, 360px) repeat-y;
+  background: url("../images/circuit-board.svg?v=rail-2") left top / clamp(108px, 13vw, 216px) var(--circuit-period, 360px) repeat;
   transform: translate3d(0, var(--circuit-offset, 0px), 0);
 }
 @media (prefers-reduced-motion: reduce) { .circuit-traces { transform: none; } }
