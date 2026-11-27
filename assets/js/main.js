@@ -21,3 +21,18 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 motion.addEventListener('change', syncScroll);
 syncScroll();
+
+const gallery = document.querySelector('.project-evidence');
+const galleryChoices = gallery.querySelector('.evidence-choices');
+function showEvidence(id) {
+  for (const view of gallery.querySelectorAll('.evidence-view')) view.hidden = view.id !== 'vista-' + id;
+  for (const button of galleryChoices.querySelectorAll('button')) {
+    button.setAttribute('aria-pressed', String(button.dataset.galleryChoice === id));
+  }
+}
+galleryChoices.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (button) showEvidence(button.dataset.galleryChoice);
+});
+showEvidence(galleryChoices.querySelector('button').dataset.galleryChoice);
+galleryChoices.hidden = false;

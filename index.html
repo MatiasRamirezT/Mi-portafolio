@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Portafolio profesional de Matías Ramírez Torres en Bogotá. Formación en MySQL, gestión y análisis de datos, y aprendizaje de desarrollo backend.">
-    <title>Matías Ramírez Torres | Bases de datos y análisis de datos</title>
+    <title>Matías Ramírez Torres | Analista de Datos y Desarrollador</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/main.css?v=certificados-1">
+    <link rel="stylesheet" href="assets/css/main.css?v=galeria-1">
     <link rel="stylesheet" href="assets/css/plasma.css">
     <script src="assets/js/plasma.js" defer></script>
-    <script src="assets/js/main.js?v=rail-2" defer></script>
+    <script src="assets/js/main.js?v=galeria-1" defer></script>
     <script src="assets/js/helmet-cloud.js?v=rail-2" defer></script>
-    <script src="assets/js/i18n.js?v=certificados-1" defer></script>
+    <script src="assets/js/i18n.js?v=galeria-1" defer></script>
   </head>
   <body>
+    <div class="intro-screen" aria-hidden="true">
+      <div class="intro-signature"><span>MR<span class="intro-period">.</span></span><i></i></div>
+    </div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="circuit-rail" aria-hidden="true"><div class="circuit-traces"></div></div>
     <header class="site-header">
@@ -28,7 +31,10 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <button class="language-toggle" id="language-toggle" type="button" aria-label="Cambiar a inglés">EN</button>
+      <div class="language-toggle" id="language-toggle" role="group" aria-label="Idioma" data-aria-en="Language">
+        <button type="button" lang="es" data-language="es" aria-label="Español" aria-pressed="true">ES</button>
+        <button type="button" lang="en" data-language="en" aria-label="English" aria-pressed="false">EN</button>
+      </div>
     </header>
 
     <main id="contenido">
@@ -61,6 +67,27 @@
 
       <section id="proyecto" aria-labelledby="titulo-proyecto">
         <div class="section-heading"><p class="section-kicker">PROYECTO DESTACADO</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
+        <div class="project-evidence">
+          <div class="evidence-head"><h3 data-en="Inside NeuroLearn IA">NeuroLearn IA en uso</h3>
+            <div class="evidence-choices" role="group" aria-label="Capturas del proyecto" data-aria-en="Project screenshots" hidden>
+              <button type="button" aria-controls="vista-acceso" aria-pressed="true" data-gallery-choice="acceso" data-en="Sign-in">Acceso</button>
+              <button type="button" aria-controls="vista-panel" aria-pressed="false" data-gallery-choice="panel" data-en="Student dashboard">Panel del estudiante</button>
+              <button type="button" aria-controls="vista-tutor" aria-pressed="false" data-gallery-choice="tutor" data-en="Math tutor">Tutor de matemáticas</button>
+            </div>
+          </div>
+            <figure id="vista-acceso" class="evidence-view">
+              <a class="evidence-image" href="assets/images/neurolearn-acceso.webp"><img src="assets/images/neurolearn-acceso.webp" width="1917" height="871" loading="lazy" alt="Captura de NeuroLearn IA: Acceso" data-alt-en="NeuroLearn IA screenshot: Sign-in"></a>
+              <figcaption><span data-en="Sign in with credentials provided by the school.">Ingreso con las credenciales asignadas por la institución.</span><a href="assets/images/neurolearn-acceso.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+            </figure>
+            <figure id="vista-panel" class="evidence-view">
+              <a class="evidence-image" href="assets/images/neurolearn-panel.webp"><img src="assets/images/neurolearn-panel.webp" width="1917" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Panel del estudiante" data-alt-en="NeuroLearn IA screenshot: Student dashboard"></a>
+              <figcaption><span data-en="An overview of the student’s subject areas, classes and progress.">Competencias, clases y progreso del estudiante en una sola vista.</span><a href="assets/images/neurolearn-panel.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+            </figure>
+            <figure id="vista-tutor" class="evidence-view">
+              <a class="evidence-image" href="assets/images/neurolearn-tutor.webp"><img src="assets/images/neurolearn-tutor.webp" width="1251" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Tutor de matemáticas" data-alt-en="NeuroLearn IA screenshot: Math tutor"></a>
+              <figcaption><span data-en="A proportional reasoning exercise in the quantitative reasoning chat.">Una actividad de proporcionalidad en el chat de razonamiento cuantitativo.</span><a href="assets/images/neurolearn-tutor.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+            </figure>
+        </div>
         <div class="experience-card project-card">
           <div class="experience-meta"><p class="section-kicker">PROYECTO DE GRADO · 2026</p><p>Colombia</p><p>Aplicación web instalable</p><a class="project-link" href="https://github.com/YesicaCausado/Proyecto_g" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div>
           <div class="experience-content">

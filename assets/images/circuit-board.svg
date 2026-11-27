@@ -1,77 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 360" preserveAspectRatio="none" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="none" fill="none">
   <defs>
-    <path id="p0" d="M7 -2v45l13 13v33L8 101v49l17 17v27l-18 18v54l12 12v34L7 324v38" pathLength="100"/>
-    <path id="p1" d="M20 -2v32l14 14v26l-9 9v32l12 12v21" pathLength="100"/>
-    <path id="p2" d="M34 -2v14l13 13v28l-7 7v21" pathLength="100"/>
-    <path id="p3" d="M49 -2v10l13 13v23l-8 8v14" pathLength="100"/>
-    <path id="p4" d="M0 118h10l8 8v16" pathLength="100"/>
-    <path id="p5" d="M3 172h8l10 10v12" pathLength="100"/>
-    <path id="p6" d="M49 74v29l-7 7v43l-10 10v20" pathLength="100"/>
-    <path id="p7" d="M64 53v39l-11 11v43l-7 7v32" pathLength="100"/>
-    <path id="p8" d="M77 82v29l-12 12v33l-5 5v23" pathLength="100"/>
-    <path id="p9" d="M31 210v16l-9 9v28l12 12v35l-14 14v38" pathLength="100"/>
-    <path id="p10" d="M44 210v30l-12 12v10l14 14v39l-12 12v35" pathLength="100"/>
-    <path id="p11" d="M57 210v22l13 13v37l-12 12v36l-9 9v23" pathLength="100"/>
-    <path id="p12" d="M78 222h-8l-5-5v-14" pathLength="100"/>
-    <path id="p13" d="M2 301h6l5-5v-9" pathLength="100"/>
-    <path id="p14" d="M0 337h8l6-6" pathLength="100"/>
-    <path id="p15" d="M65 315v-10l12-12v-28" pathLength="100"/>
+    <path id="p0" d="M18 0V22l16 16v44l-16 16v67l16 16v54l-16 16V360" pathLength="100"/>
+    <path id="p1" d="M54 0V38l-16 16v44l16 16v67l-16 16v54l16 16V360" pathLength="100"/>
+    <path id="p2" d="M90 0V54l16 16v44l-16 16v67l16 16v54l-16 16V360" pathLength="100"/>
+    <path id="p3" d="M126 0V22l-16 16v44l16 16v67l-16 16v54l16 16V360" pathLength="100"/>
+    <path id="p4" d="M162 0V38l16 16v44l-16 16v67l16 16v54l-16 16V360" pathLength="100"/>
+    <path id="p5" d="M198 0V54l-16 16v44l16 16v67l-16 16v54l16 16V360" pathLength="100"/>
+    <path id="p6" d="M234 0V22l16 16v44l-16 16v67l16 16v54l-16 16V360" pathLength="100"/>
+    <path id="p7" d="M270 0V38l-16 16v44l16 16v67l-16 16v54l16 16V360" pathLength="100"/>
+    <g id="half">
+      <g stroke="#b74a60" stroke-width=".8"><use href="#p0"/><use href="#p1"/><use href="#p2"/><use href="#p3"/><use href="#p4"/><use href="#p5"/><use href="#p6"/><use href="#p7"/></g>
+      <g stroke="#ed7584" stroke-width="1.65" class="signals"><use href="#p0"/><use href="#p3" style="animation-delay:-2.1s"/><use href="#p6" style="animation-delay:-4.2s"/></g>
+      <g fill="#241017" stroke="#d36177" stroke-width="1"><circle cx="18" cy="22" r="2.1"/><circle cx="54" cy="38" r="2.1"/><circle cx="90" cy="54" r="2.1"/><circle cx="126" cy="22" r="2.1"/><circle cx="162" cy="38" r="2.1"/><circle cx="198" cy="54" r="2.1"/><circle cx="234" cy="22" r="2.1"/><circle cx="270" cy="38" r="2.1"/></g>
+    </g>
   </defs>
   <style>
-    .tracks { stroke: #c64960; stroke-width: 1; opacity: .62; }
-    .pulse { stroke: #ffa5a5; stroke-width: 2; stroke-dasharray: 7 113; opacity: 0; }
+    .signals use { opacity: 0; stroke-dasharray: 4 106; }
     @media (prefers-reduced-motion: no-preference) {
-      .pulse { animation: transmit 4.6s linear infinite; animation-delay: var(--phase); }
+      .signals use { animation: flow 6s linear infinite; }
     }
-    @keyframes transmit {
-      0% { stroke-dashoffset: 7; opacity: 0; }
-      12%, 78% { opacity: .94; }
-      90%, 100% { stroke-dashoffset: -100; opacity: 0; }
-    }
+    @keyframes flow { 0% { stroke-dashoffset: 5; opacity: 0; } 15%, 80% { opacity: .9; } 100% { stroke-dashoffset: -100; opacity: 0; } }
   </style>
-  <g stroke-linecap="round" stroke-linejoin="round">
-    <g class="tracks">
-      <use href="#p0"/>
-      <use href="#p1"/>
-      <use href="#p2"/>
-      <use href="#p3"/>
-      <use href="#p4"/>
-      <use href="#p5"/>
-      <use href="#p6"/>
-      <use href="#p7"/>
-      <use href="#p8"/>
-      <use href="#p9"/>
-      <use href="#p10"/>
-      <use href="#p11"/>
-      <use href="#p12"/>
-      <use href="#p13"/>
-      <use href="#p14"/>
-      <use href="#p15"/>
-    </g>
-    <use class="pulse" href="#p0" style="--phase:-0.00s"/>
-    <use class="pulse" href="#p2" style="--phase:-0.83s"/>
-    <use class="pulse" href="#p3" style="--phase:-1.66s"/>
-    <use class="pulse" href="#p6" style="--phase:-2.49s"/>
-    <use class="pulse" href="#p8" style="--phase:-3.32s"/>
-    <use class="pulse" href="#p9" style="--phase:-4.15s"/>
-    <use class="pulse" href="#p10" style="--phase:-4.98s"/>
-    <use class="pulse" href="#p11" style="--phase:-5.81s"/>
-    <use class="pulse" href="#p15" style="--phase:-6.64s"/>
-  </g>
-  <g fill="#270e15" stroke="#ef6b7b" stroke-width="1.2">
-    <rect x="21" y="184" width="44" height="26" rx="4"/>
-    <rect x="26" y="189" width="34" height="16" rx="2" stroke-opacity=".6"/>
-    <circle cx="37" cy="144" r="2"/>
-    <circle cx="40" cy="81" r="2"/>
-    <circle cx="54" cy="66" r="2"/>
-    <circle cx="18" cy="142" r="2"/>
-    <circle cx="49" cy="74" r="2"/>
-    <circle cx="64" cy="53" r="2"/>
-    <circle cx="77" cy="82" r="2"/>
-    <circle cx="13" cy="287" r="2"/>
-    <circle cx="14" cy="331" r="2"/>
-    <circle cx="65" cy="315" r="2"/>
-    <circle cx="77" cy="265" r="2"/>
-  </g>
-  <path fill="#ff8c91" d="M34 194h15l3 3v3H34z"/>
+  <use href="#half"/><use href="#half" transform="translate(640 0) scale(-1 1)"/>
 </svg>

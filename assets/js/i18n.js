@@ -1,11 +1,9 @@
 const languageToggle = document.querySelector('#language-toggle');
 const englishCopy = {
-  'title': 'Matías Ramírez Torres | Databases and Data Analysis',
   'meta': 'Professional portfolio of Matías Ramírez Torres in Bogotá. Training in MySQL, data management and analysis, with an interest in backend development.',
   'skip': 'Skip to content',
   'nav-aria': 'Main navigation',
   'nav-profile': 'Profile', 'nav-project': 'Project', 'nav-skills': 'Skills', 'nav-education': 'Education', 'nav-contact': 'Contact',
-  'toggle-aria': 'Switch to Spanish',
   'hero-context': 'Bogotá, Colombia <span aria-hidden="true">/</span> Available for rotating shifts',
   'hero-description': 'Databases, data management<br>and analysis.',
   'hero-summary': 'I use SQL to organize and query data. I study software development and am learning how to connect databases to the features people use in an application.',
@@ -40,7 +38,7 @@ const englishCopy = {
   'footer-back': 'Back to top ↑',
 };
 const selectors = {
-  title: ['title'], meta: ['meta[name="description"]'], skip: ['.skip-link'], 'nav-aria': ['#menu-principal'],
+  meta: ['meta[name="description"]'], skip: ['.skip-link'], 'nav-aria': ['#menu-principal'],
   'nav-profile': ['#menu-principal a[href="#perfil"]'], 'nav-project': ['#menu-principal a[href="#proyecto"]'], 'nav-skills': ['#menu-principal a[href="#conocimientos"]'], 'nav-education': ['#menu-principal a[href="#formacion"]'], 'nav-contact': ['#menu-principal a[href="#contacto"]'],
   'hero-context': ['.hero-context'], 'hero-description': ['.hero-description'], 'hero-summary': ['.hero-summary'], 'hero-project': ['.hero-actions a:first-child'], 'hero-contact': ['.hero-actions a:last-child'],
   'helmet-aria': ['.helmet-stage'], 'helmet-canvas-aria': ['.helmet-cloud'],
@@ -92,17 +90,29 @@ function setLanguage(language) {
       : (english ? 'PDF pending' : 'PDF pendiente');
     link.querySelector('.pdf-label').textContent = label;
   }
-  const toggle = document.querySelector('#language-toggle');
-  toggle.textContent = english ? 'ES' : 'EN';
-  toggle.setAttribute('aria-label', english ? englishCopy['toggle-aria'] : 'Cambiar a inglés');
-  toggle.setAttribute('aria-pressed', String(english));
+  for (const [attr, dataKey] of [['textContent','en'], ['alt','altEn'], ['aria-label','ariaEn']]) {
+    const selector = {en: '[data-en]', altEn: '[data-alt-en]', ariaEn: '[data-aria-en]'}[dataKey];
+    for (const element of document.querySelectorAll(selector)) {
+      const spanishKey = dataKey + 'Original';
+      element.dataset[spanishKey] ??= attr === 'textContent' ? element.textContent : element.getAttribute(attr);
+      const value = english ? element.dataset[dataKey] : element.dataset[spanishKey];
+      if (attr === 'textContent') element.textContent = value;
+      else element.setAttribute(attr, value);
+    }
+  }
+  for (const button of languageToggle.querySelectorAll('[data-language]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.language === language));
+  }
   window.dispatchEvent(new Event('portfolio-language-change'));
 }
 
-const savedLanguage = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'es';
+let savedLanguage = 'es';
+try { if (localStorage.getItem('portfolio-language') === 'en') savedLanguage = 'en'; } catch { /* Optional preference storage. */ }
 setLanguage(savedLanguage);
-languageToggle.addEventListener('click', () => {
-  const next = document.documentElement.lang === 'en' ? 'es' : 'en';
-  localStorage.setItem('portfolio-language', next);
-  setLanguage(next);
+languageToggle.addEventListener('click', event => {
+  const button = event.target.closest('[data-language]');
+  if (!button) return;
+  const language = button.dataset.language;
+  setLanguage(language);
+  try { localStorage.setItem('portfolio-language', language); } catch { /* Use the session selection. */ }
 });
