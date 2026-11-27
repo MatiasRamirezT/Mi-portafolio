@@ -4,13 +4,16 @@
   if (!canvas || !stage) return;
 
   const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
-  if (!ctx) return;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const random = (() => { let seed = 0x6d2b79f5; return () => { seed = Math.imul(seed ^ (seed >>> 15), seed | 1); seed ^= seed + Math.imul(seed ^ (seed >>> 7), seed | 61); return ((seed ^ (seed >>> 14)) >>> 0) / 4294967296; }; })();
   const particles = [];
   const sourceImage = stage.querySelector('.helmet-portrait');
   const renderImage = document.createElement('canvas');
   const renderContext = renderImage.getContext('2d');
+  const sweepMs = 5400;
+  const listeners = new AbortController();
+  const options = { signal: listeners.signal };
+  let startTime = 0, fadeTimer, endTimer;
   let painted = false;
   let width = 0, height = 0, dpr = 1, frame = 0, lastFrame = 0, visible = false;
   let pointerX = 0, pointerY = 0, ready = false;
@@ -88,27 +91,26 @@
     aura.addColorStop(0, 'rgba(201,35,54,.11)');
     aura.addColorStop(.6, 'rgba(115,14,29,.04)');
     aura.addColorStop(1, 'rgba(0,0,0,0)');
-    if (ready && reducedMotion.matches) render(0, true);
-    else requestRender();
+    requestRender();
   }
 
-  function render(now, fixed = false) {
+  function render(now) {
     if (!width || !height || !ready) return;
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = aura;
     ctx.fillRect(0, 0, width, height);
 
-    const rotation = (fixed ? -.1 : Math.sin(now * .0003) * .16) + pointerX * .14;
+    const rotation = (Math.sin(now * .0003) * .16) + pointerX * .14;
     const tilt = pointerY * .055;
     const cosine = Math.cos(rotation), sine = Math.sin(rotation);
-    const scale = Math.min(width * .44, height * .48);
+    const scale = Math.min(width, height) * .48;
     const camera = 5.2;
     const imageSize = scale * 2.1;
     ctx.globalAlpha = .78;
     ctx.drawImage(renderImage, (width - imageSize) * .5, height * .49 - imageSize * .5, imageSize, imageSize);
     ctx.globalAlpha = 1;
     // Cada barrido abre levemente la nube y vuelve a reunirla en su silueta.
-    const wave = fixed ? -2 : (now % 5400) / 2700 * 1.7 - .2;
+    const wave = Math.min(now / sweepMs, 1) * 3.4 - .2;
     const limit = Math.min(particles.length, width < 600 ? Math.max(1100, Math.round(width * 3.5)) : Math.max(2200, Math.round(width * 5.5)));
     for (let i = 0; i < limit; i += 1) {
       const p = particles[i];
@@ -120,7 +122,7 @@
       const x = width * .5 + (rotatedX + p.x * lift * .055) * scale * perspective;
       const y = height * .49 + (p.y * (1 + lift * .055) * Math.cos(tilt) - rotatedZ * Math.sin(tilt)) * scale * perspective;
       if (x < -3 || x > width + 3 || y < -3 || y > height + 3) continue;
-      ctx.globalAlpha = fixed ? p.alpha / 255 : (p.alpha / 255) * (.9 + Math.sin(now * .0018 + p.phase) * .1);
+      ctx.globalAlpha = (p.alpha / 255) * (.9 + Math.sin(now * .0018 + p.phase) * .1);
       ctx.fillStyle = lift > .55 ? '#ffc1ae' : lift > .16 ? '#ff6372' : p.color;
       ctx.beginPath();
       ctx.arc(x, y, p.size * (1 + lift * .65) * perspective, 0, Math.PI * 2);
@@ -137,36 +139,74 @@
     frame = 0;
     if (!visible || document.hidden || reducedMotion.matches) return;
     if (now - lastFrame >= 1000 / 30) {
-      render(now);
+      render(now - startTime);
       lastFrame = now;
     }
     frame = requestAnimationFrame(animate);
   }
   function requestRender() {
-    if (visible && ready && !frame && !reducedMotion.matches) frame = requestAnimationFrame(animate);
+    if (startTime && visible && ready && !frame && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(animate);
   }
   stage.addEventListener('pointermove', event => {
     if (event.pointerType === 'touch') return;
     const rect = stage.getBoundingClientRect();
     pointerX = ((event.clientX - rect.left) / rect.width - .5) * 2;
     pointerY = ((event.clientY - rect.top) / rect.height - .5) * 2;
-  }, { passive: true });
-  stage.addEventListener('pointerleave', () => { pointerX = 0; pointerY = 0; }, { passive: true });
-  document.addEventListener('visibilitychange', requestRender);
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) {
-      cancelAnimationFrame(frame);
-      frame = 0;
-      render(0, true);
-    } else requestRender();
-  });
-  new ResizeObserver(resize).observe(canvas);
-  new IntersectionObserver(entries => {
+  }, { passive: true, signal: listeners.signal });
+  stage.addEventListener('pointerleave', () => { pointerX = 0; pointerY = 0; }, options);
+  const sizeObserver = new ResizeObserver(resize);
+  const viewObserver = new IntersectionObserver(entries => {
     visible = entries.some(entry => entry.isIntersecting);
-    if (visible && reducedMotion.matches) render(0, true);
-    else requestRender();
-    if (!visible) { cancelAnimationFrame(frame); frame = 0; }
-  }, { rootMargin: '80px' }).observe(stage);
-  if (sourceImage.complete && sourceImage.naturalWidth) sampleCharacter();
-  else sourceImage.addEventListener('load', sampleCharacter, { once: true });
+    if (visible) requestRender();
+    else { cancelAnimationFrame(frame); frame = 0; }
+  });
+
+  function finish() {
+    listeners.abort();
+    clearTimeout(fadeTimer);
+    clearTimeout(endTimer);
+    cancelAnimationFrame(frame);
+    sizeObserver.disconnect();
+    viewObserver.disconnect();
+    stage.classList.remove('is-playing', 'is-fading', 'has-frame');
+    stage.replaceChildren();
+    particles.length = 0;
+  }
+
+  function fade() {
+    stage.classList.add('is-fading');
+    cancelAnimationFrame(frame);
+    ready = false;
+    endTimer = setTimeout(finish, reducedMotion.matches ? 320 : 1840);
+  }
+
+  async function start() {
+    const intro = document.querySelector('.intro-screen');
+    if (intro) await Promise.allSettled(intro.getAnimations().map(animation => animation.finished));
+    if (listeners.signal.aborted) return;
+
+    startTime = performance.now();
+    stage.classList.add('is-playing');
+    if (!reducedMotion.matches && ctx && renderContext) {
+      sampleCharacter();
+      sizeObserver.observe(canvas);
+      viewObserver.observe(stage);
+    }
+    fadeTimer = setTimeout(fade, reducedMotion.matches ? 1200 : sweepMs);
+  }
+
+  document.addEventListener('visibilitychange', requestRender, options);
+  window.addEventListener('pagehide', finish, options);
+  window.addEventListener('hashchange', () => {
+    if (!location.hash || ['#perfil', '#contenido'].includes(location.hash)) return;
+    if (!startTime) finish();
+    else if (!stage.classList.contains('is-fading')) {
+      clearTimeout(fadeTimer);
+      fade();
+    }
+  }, options);
+  reducedMotion.addEventListener('change', finish, options);
+  if (sourceImage.complete) {
+    if (sourceImage.naturalWidth) start();
+  } else sourceImage.addEventListener('load', start, { ...options, once: true });
 })();

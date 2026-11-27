@@ -270,18 +270,37 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 @keyframes plasma-name-reveal { 0% { opacity: .22; filter: blur(15px); transform: translateY(18px) scale(.9); } 55% { opacity: .82; filter: blur(2px); transform: translateY(-3px) scale(1.025); } 100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); } }
 
 
-/* Casco de partículas 3D en rojo */
-.helmet-stage { position: relative; z-index: 2; width: min(100%, 520px); height: min(460px, 38vw); min-height: 350px; align-self: center; justify-self: center; overflow: hidden; }
-.helmet-stage::before { position: absolute; inset: 5% 0 8%; border-radius: 50%; background: radial-gradient(ellipse at 50% 48%, #090909 0 28%, #090909db 45%, #09090972 64%, transparent 80%), radial-gradient(ellipse, #a311241c 0, #6d0d1710 42%, transparent 72%); content: ""; pointer-events: none; }
-.helmet-cloud { position: relative; display: block; width: 100%; height: 100%; }
-@media (max-width: 900px) { .helmet-stage { width: min(100%, 520px); height: 440px; min-height: 0; } }
-@media (max-width: 600px) { .helmet-stage { height: min(390px, 100vw); min-height: 300px; } }
-@media (min-width: 901px) {
-  .hero { grid-template-columns: minmax(0, 1.2fr) minmax(420px, .8fr); gap: 3vw; }
-  .helmet-stage { width: 100%; max-width: 520px; height: min(500px, 40vw); }
+/* La armadura ocupa un espacio reservado mientras se disuelve. */
+.helmet-stage {
+  position: relative; visibility: hidden; opacity: 0; z-index: 1;
+  isolation: isolate; overflow: hidden;
 }
-@media (min-width: 901px) and (max-width: 1100px) {
-  .hero { grid-template-columns: minmax(0, 1fr) minmax(340px, .8fr); gap: 2vw; }
+.helmet-stage.is-playing { visibility: visible; opacity: 1; }
+.helmet-stage.is-fading {
+  opacity: 0; filter: blur(16px); pointer-events: none;
+  transition: opacity 1.8s ease-in-out, filter 1.8s ease-out;
+}
+.helmet-cloud { position: relative; display: block; width: 100%; height: 100%; }
+@media (min-width: 901px) {
+  .hero-forge {
+    --right-bleed: max(0px, calc((100vw - 100%) / 2 - 12px));
+    margin-right: calc(-1 * var(--right-bleed)); padding-right: var(--right-bleed);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 3vw;
+  }
+  .helmet-stage {
+    position: absolute; top: 10px; right: 0;
+    width: min(46vw, calc(100% - 12px)); height: min(46vw, calc(100svh - 96px), calc(100% - 10px));
+  }
+}
+@media (max-width: 900px) {
+  .hero-forge { padding-top: 12px; }
+  .helmet-stage {
+    grid-row: 1; justify-self: end;
+    width: min(80vw, 470px); height: min(64vw, 34svh, 370px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .helmet-stage.is-fading { filter: none; transition: opacity .3s linear; }
 }
 @media (max-width: 900px) { body::before { inset: -12%; background-size: 170% 170%, 160% 160%, 160% 160%, 145% 145%, 100% 100%; } }
 @media (max-width: 600px) { }
@@ -309,7 +328,6 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 @media (prefers-reduced-motion: reduce) { .circuit-traces { transform: none; } }
 @media (forced-colors: active) { .circuit-rail { display: none; } }
 
-.helmet-stage { isolation: isolate; }
 .helmet-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .helmet-stage.has-frame .helmet-portrait { visibility: hidden; }
 .helmet-cloud { z-index: 1; }
