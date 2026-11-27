@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio profesional de Matías Ramírez Torres en Bogotá. Formación en MySQL, gestión y análisis de datos, y aprendizaje de desarrollo backend.">
     <title>Matías Ramírez Torres | Analista de Datos y Desarrollador</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/main.css?v=experiencia-1">
+    <link rel="stylesheet" href="assets/css/main.css?v=entrada-1">
     <link rel="stylesheet" href="assets/css/plasma.css">
     <script src="assets/js/plasma.js" defer></script>
     <script src="assets/js/main.js?v=experiencia-1" defer></script>
@@ -15,9 +15,42 @@
     <script src="assets/js/i18n.js?v=experiencia-1" defer></script>
   </head>
   <body>
-    <div class="intro-screen" aria-hidden="true">
-      <div class="intro-signature"><span>MR<span class="intro-period">.</span></span><i></i></div>
-    </div>
+    <template id="intro-template">
+      <div class="intro-screen" aria-hidden="true">
+        <div class="intro-signature"><span>MR<span class="intro-period">.</span></span><i></i></div>
+      </div>
+    </template>
+    <script>
+      (() => {
+        const key = 'mi-portafolio:intro-seen';
+        try {
+          if (sessionStorage.getItem(key)) return;
+          sessionStorage.setItem(key, '1');
+        } catch {
+          return;
+        }
+
+        const motion = matchMedia('(prefers-reduced-motion: no-preference)');
+        if (location.hash || !motion.matches) return;
+
+        const template = document.getElementById('intro-template');
+        const intro = template.content.firstElementChild.cloneNode(true);
+        const listeners = new AbortController();
+        const options = { signal: listeners.signal };
+        function dismiss() {
+          listeners.abort();
+          intro.remove();
+        }
+        intro.addEventListener('animationend', event => {
+          if (event.target === intro && event.animationName === 'intro-end') dismiss();
+        }, options);
+        document.addEventListener('focusin', dismiss, options);
+        window.addEventListener('hashchange', dismiss, options);
+        window.addEventListener('pagehide', dismiss, options);
+        motion.addEventListener('change', dismiss, options);
+        template.after(intro);
+      })();
+    </script>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="circuit-rail" aria-hidden="true"><div class="circuit-traces"></div></div>
     <header class="site-header">

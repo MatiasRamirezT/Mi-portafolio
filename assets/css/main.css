@@ -356,7 +356,6 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
   .intro-signature { position: relative; z-index: 1; text-align: center; font-size: clamp(52px, 7vw, 96px); font-weight: 750; line-height: 1; letter-spacing: -.085em; animation: signature-exit .28s .65s ease-in both; }
   .intro-period { color: #ff5166; }
   .intro-signature i { display: block; margin: .22em auto 0; width: 1.3em; height: 2px; background: #ff6273; box-shadow: 0 0 10px #ff344e; animation: intro-trace .6s ease-out both; }
-  body:focus-within .intro-screen { display: none; }
 }
 @keyframes intro-trace { from { transform: scaleX(.04); } }
 @keyframes signature-exit { to { opacity: 0; transform: translateY(-6px); } }
