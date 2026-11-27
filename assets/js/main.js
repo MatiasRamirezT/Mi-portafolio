@@ -36,3 +36,16 @@ galleryChoices.addEventListener('click', event => {
 });
 showEvidence(galleryChoices.querySelector('button').dataset.galleryChoice);
 galleryChoices.hidden = false;
+
+const contactForm = document.querySelector('.contact-form');
+contactForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const fields = new FormData(contactForm);
+  const name = fields.get('name').trim();
+  const email = fields.get('email').trim();
+  const message = fields.get('message').trim().replace(/\r?\n/g, '\r\n');
+  const english = document.documentElement.lang === 'en';
+  const subject = english ? 'Portfolio inquiry from ' + name : 'Contacto desde el portafolio de parte de ' + name;
+  const body = message + '\r\n\r\n' + name + '\r\n' + email;
+  window.location.assign(contactForm.action + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+});

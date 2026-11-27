@@ -7,12 +7,12 @@
     <meta name="description" content="Portafolio profesional de Matías Ramírez Torres en Bogotá. Formación en MySQL, gestión y análisis de datos, y aprendizaje de desarrollo backend.">
     <title>Matías Ramírez Torres | Analista de Datos y Desarrollador</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/main.css?v=galeria-1">
+    <link rel="stylesheet" href="assets/css/main.css?v=experiencia-1">
     <link rel="stylesheet" href="assets/css/plasma.css">
     <script src="assets/js/plasma.js" defer></script>
-    <script src="assets/js/main.js?v=galeria-1" defer></script>
+    <script src="assets/js/main.js?v=experiencia-1" defer></script>
     <script src="assets/js/helmet-cloud.js?v=rail-2" defer></script>
-    <script src="assets/js/i18n.js?v=galeria-1" defer></script>
+    <script src="assets/js/i18n.js?v=experiencia-1" defer></script>
   </head>
   <body>
     <div class="intro-screen" aria-hidden="true">
@@ -25,8 +25,8 @@
       <nav id="menu-principal" aria-label="Navegación principal">
         <ul>
           <li><a href="#perfil">Perfil</a></li>
-          <li><a href="#proyecto">Proyecto</a></li>
-          <li><a href="#conocimientos">Conocimientos</a></li>
+          <li><a href="#proyecto">Experiencia</a></li>
+          <li><a href="#conocimientos">Habilidades</a></li>
           <li><a href="#formacion">Formación</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -45,7 +45,7 @@
             <h1 id="titulo-perfil"><span>Matías</span> <span>Ramírez Torres</span></h1>
             <p class="hero-description">Bases de datos, gestión<br>y análisis de información.</p>
             <p class="hero-summary">Trabajo con SQL para organizar y consultar información. Estudio Desarrollo de Software y sigo aprendiendo a conectar las bases de datos con las funciones de una aplicación.</p>
-            <div class="hero-actions"><a class="action-primary" href="#proyecto">Ver proyecto destacado</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
+            <div class="hero-actions"><a class="action-primary" href="#proyecto">Ver experiencia</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
           </div>
           <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
             <img class="helmet-portrait" src="assets/images/spartan-particle-person.webp" alt="" width="520" height="520" fetchpriority="high">
@@ -66,7 +66,16 @@
       </section>
 
       <section id="proyecto" aria-labelledby="titulo-proyecto">
-        <div class="section-heading"><p class="section-kicker">PROYECTO DESTACADO</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
+        <div class="section-heading"><p class="section-kicker">EXPERIENCIA</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
+        <div class="project-process">
+          <p class="process-period" data-en="March – November 2026">Marzo – noviembre de 2026</p>
+          <p class="process-lead" data-en="We spent more than eight months building NeuroLearn IA as a team, from identifying a learning need to testing the platform with real users.">Durante más de ocho meses desarrollamos NeuroLearn IA en equipo, desde la investigación de una necesidad educativa hasta las pruebas con usuarios reales.</p>
+          <ol class="process-phases">
+            <li><h3 data-en="Research and documentation">Investigación y documentación</h3><p data-en="We explored the problem students faced and documented the need the platform would address.">Investigamos el problema que enfrentaban los estudiantes y documentamos la necesidad que atendería la plataforma.</p></li>
+            <li><h3 data-en="Design and development">Diseño y desarrollo</h3><p data-en="We created diagrams and mockups, built the page layouts and developed beta versions of the platform.">Creamos diagramas y mockups, maquetamos las pantallas y desarrollamos versiones beta de la plataforma.</p></li>
+            <li><h3 data-en="User testing and iteration">Pruebas y ajustes</h3><p data-en="We tested the betas with real users. Based on those sessions, we fixed bugs and redesigned parts of the interface.">Probamos las betas con usuarios reales. A partir de esas pruebas corregimos errores y rediseñamos elementos de la interfaz.</p></li>
+          </ol>
+        </div>
         <div class="project-evidence">
           <div class="evidence-head"><h3 data-en="Inside NeuroLearn IA">NeuroLearn IA en uso</h3>
             <div class="evidence-choices" role="group" aria-label="Capturas del proyecto" data-aria-en="Project screenshots" hidden>
@@ -245,6 +254,18 @@
           </a>
         </div>
         </div>
+        <form class="contact-form" action="mailto:matias_r.m5@hotmail.com" method="post" enctype="text/plain" aria-labelledby="titulo-formulario">
+          <div class="form-intro">
+            <h3 id="titulo-formulario" data-en="Write to me">Escríbeme</h3>
+            <p data-en="This opens a draft in your email app so you can review and send it.">Se abrirá un borrador en tu aplicación de correo para que puedas revisarlo y enviarlo.</p>
+          </div>
+          <div class="form-fields">
+            <label><span data-en="Your name">Tu nombre</span><input name="name" type="text" autocomplete="name" maxlength="100" required></label>
+            <label><span data-en="Your email">Tu correo</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label class="form-message"><span data-en="Message">Mensaje</span><textarea name="message" rows="5" required></textarea></label>
+            <button class="action-primary" type="submit" data-en="Open email draft">Abrir borrador de correo</button>
+          </div>
+        </form>
       </section>
     </main>
 
