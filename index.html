@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="Portafolio profesional de Matías Ramírez Torres en Bogotá. Formación en MySQL, gestión y análisis de datos, y aprendizaje de desarrollo backend.">
+    <meta data-i18n="meta" data-i18n-attr="content" name="description" content="Portafolio profesional de Matías Ramírez Torres en Bogotá. Formación en MySQL, gestión y análisis de datos, y aprendizaje de desarrollo backend.">
     <title>Matías Ramírez Torres | Analista de Datos y Desarrollador</title>
     <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/main.css?v=portada-2">
-    <link rel="stylesheet" href="assets/css/plasma.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=caso-1">
+    <link rel="stylesheet" href="assets/css/plasma.css?v=caso-1">
     <script src="assets/js/plasma.js" defer></script>
     <script src="assets/js/main.js?v=experiencia-1" defer></script>
     <script src="assets/js/helmet-cloud.js?v=armadura-1" defer></script>
-    <script src="assets/js/i18n.js?v=experiencia-1" defer></script>
+    <script src="assets/js/i18n-en.js?v=caso-1" defer></script>
+    <script src="assets/js/i18n.js?v=caso-1" defer></script>
   </head>
   <body>
     <template id="intro-template">
@@ -51,20 +52,20 @@
         template.after(intro);
       })();
     </script>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <a data-i18n="skip" class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="circuit-rail" aria-hidden="true"><div class="circuit-traces"></div></div>
     <header class="site-header">
       <a class="brand" href="#perfil">MR<span>.</span></a>
-      <nav id="menu-principal" aria-label="Navegación principal">
+      <nav data-i18n="nav-aria" data-i18n-attr="aria-label" id="menu-principal" aria-label="Navegación principal">
         <ul>
-          <li><a href="#perfil">Perfil</a></li>
-          <li><a href="#proyecto">Experiencia</a></li>
-          <li><a href="#conocimientos">Habilidades</a></li>
-          <li><a href="#formacion">Formación</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a data-i18n="nav-profile" href="#perfil">Perfil</a></li>
+          <li><a data-i18n="nav-project" href="#proyecto">Experiencia</a></li>
+          <li><a data-i18n="nav-skills" href="#conocimientos">Habilidades</a></li>
+          <li><a data-i18n="nav-education" href="#formacion">Formación</a></li>
+          <li><a data-i18n="nav-contact" href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <div class="language-toggle" id="language-toggle" role="group" aria-label="Idioma" data-aria-en="Language">
+      <div data-i18n="language-group" data-i18n-attr="aria-label" class="language-toggle" id="language-toggle" role="group" aria-label="Idioma">
         <button type="button" lang="es" data-language="es" aria-label="Español" aria-pressed="true">ES</button>
         <button type="button" lang="en" data-language="en" aria-label="English" aria-pressed="false">EN</button>
       </div>
@@ -74,109 +75,157 @@
       <section id="perfil" aria-labelledby="titulo-perfil">
         <div class="hero hero-forge">
           <div class="hero-intro">
-            <p class="hero-context">Bogotá, Colombia <span aria-hidden="true">/</span> Disponible para horarios rotativos</p>
+            <p data-i18n="hero-context" class="hero-context">Bogotá, Colombia <span aria-hidden="true">/</span> Disponible para horarios rotativos</p>
             <h1 id="titulo-perfil"><span>Matías</span> <span>Ramírez Torres</span></h1>
-            <p class="hero-description">Bases de datos, gestión<br>y análisis de información.</p>
-            <p class="hero-summary">Trabajo con SQL para organizar y consultar información. Estudio Desarrollo de Software y sigo aprendiendo a conectar las bases de datos con las funciones de una aplicación.</p>
-            <div class="hero-actions"><a class="action-primary" href="#proyecto">Ver experiencia</a><a class="action-secondary" href="#contacto">Contactarme</a></div>
+            <p data-i18n="hero-description" class="hero-description">Bases de datos, gestión<br>y análisis de información.</p>
+            <p data-i18n="hero-summary" class="hero-summary">Trabajo con SQL para organizar y consultar información. Estudio Desarrollo de Software y sigo aprendiendo a conectar las bases de datos con las funciones de una aplicación.</p>
+            <div class="hero-actions"><a data-i18n="hero-project" class="action-primary" href="#proyecto">Ver experiencia</a><a data-i18n="hero-contact" class="action-secondary" href="#contacto">Contactarme</a></div>
           </div>
-          <aside class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
+          <aside data-i18n="helmet-aria" data-i18n-attr="aria-label" class="helmet-stage" aria-label="Personaje de Halo representado como una nube de partículas rojas en 3D">
             <img class="helmet-portrait" src="assets/images/spartan-particle-person.webp" alt="" width="520" height="520" fetchpriority="high">
-            <canvas class="helmet-cloud" role="img" aria-label="Personaje con armadura, casco y torso, convertido en partículas rojas">
+            <canvas data-i18n="helmet-canvas-aria" data-i18n-attr="aria-label" class="helmet-cloud" role="img" aria-label="Personaje con armadura, casco y torso, convertido en partículas rojas">
               Personaje con armadura representado en partículas rojas.
             </canvas>
           </aside>
         </div>
         <div class="profile-details">
-          <div class="section-heading"><p class="section-kicker">PERFIL</p><h2>Del registro al análisis.</h2></div>
+          <div class="section-heading"><p data-i18n="profile-kicker" class="section-kicker">PERFIL</p><h2 data-i18n="profile-heading">Del registro al análisis.</h2></div>
           <div class="profile-copy">
-        <p>Mi enfoque profesional está en la gestión y el análisis de datos. Mi experiencia registrando información me enseñó a cuidar su precisión. Con MySQL puedo organizar registros, relacionar tablas y escribir consultas para responder preguntas sobre los datos.</p>
-        <p>También estoy aprendiendo desarrollo backend. Me interesa la lógica que hay detrás de cada función: qué datos necesita, cómo validarlos y qué reglas debe cumplir una operación antes de guardarse.</p>
-        <p>Resido en Bogotá D. C., Colombia, y tengo disponibilidad para horarios rotativos.</p>
-        <p><a href="#proyecto">Ver NeuroLearn IA</a> | <a href="#contacto">Contactarme</a></p>
+        <p data-i18n="profile-p1">Mi enfoque profesional está en la gestión y el análisis de datos. Mi experiencia registrando información me enseñó a cuidar su precisión. Con MySQL puedo organizar registros, relacionar tablas y escribir consultas para responder preguntas sobre los datos.</p>
+        <p data-i18n="profile-p2">También estoy aprendiendo desarrollo backend. Me interesa la lógica que hay detrás de cada función: qué datos necesita, cómo validarlos y qué reglas debe cumplir una operación antes de guardarse.</p>
+        <p data-i18n="profile-p3">Resido en Bogotá D. C., Colombia, y tengo disponibilidad para horarios rotativos.</p>
+        <p><a data-i18n="profile-project" href="#caso-sql">Ver el caso SQL de NeuroLearn</a> | <a data-i18n="profile-contact" href="#contacto">Contactarme</a></p>
           </div>
         </div>
       </section>
 
       <section id="proyecto" aria-labelledby="titulo-proyecto">
-        <div class="section-heading"><p class="section-kicker">EXPERIENCIA</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
+        <div class="section-heading"><p data-i18n="project-kicker" class="section-kicker">EXPERIENCIA</p><h2 id="titulo-proyecto">NeuroLearn IA</h2></div>
         <div class="project-process">
-          <p class="process-period" data-en="March – November 2026">Marzo – noviembre de 2026</p>
-          <p class="process-lead" data-en="We spent more than eight months building NeuroLearn IA as a team, from identifying a learning need to testing the platform with real users.">Durante más de ocho meses desarrollamos NeuroLearn IA en equipo, desde la investigación de una necesidad educativa hasta las pruebas con usuarios reales.</p>
+          <p data-i18n="period" class="process-period">Marzo – noviembre de 2026</p>
+          <p data-i18n="process-lead" class="process-lead">Durante más de ocho meses desarrollamos NeuroLearn IA en equipo, desde la investigación de una necesidad educativa hasta las pruebas con usuarios reales.</p>
+          <div class="my-contribution">
+            <h3 data-i18n="my-role">Mi aporte al proyecto</h3>
+            <p data-i18n="project-contribution">Integré PostgreSQL de Supabase con el backend de NeuroLearn y ajusté la autenticación. También modifiqué las rutas protegidas del frontend y escribí una comprobación de la conexión a la base de datos.</p>
+            <a href="https://github.com/YesicaCausado/Proyecto_g/commit/0cb81057716737cd7bfaeb126631b646771a3f25"><span data-i18n="my-changes">Ver mi cambio de integración en GitHub</span></a>
+          </div>
           <ol class="process-phases">
-            <li><h3 data-en="Research and documentation">Investigación y documentación</h3><p data-en="We explored the problem students faced and documented the need the platform would address.">Investigamos el problema que enfrentaban los estudiantes y documentamos la necesidad que atendería la plataforma.</p></li>
-            <li><h3 data-en="Design and development">Diseño y desarrollo</h3><p data-en="We created diagrams and mockups, built the page layouts and developed beta versions of the platform.">Creamos diagramas y mockups, maquetamos las pantallas y desarrollamos versiones beta de la plataforma.</p></li>
-            <li><h3 data-en="User testing and iteration">Pruebas y ajustes</h3><p data-en="We tested the betas with real users. Based on those sessions, we fixed bugs and redesigned parts of the interface.">Probamos las betas con usuarios reales. A partir de esas pruebas corregimos errores y rediseñamos elementos de la interfaz.</p></li>
+            <li><h3 data-i18n="research-title">Investigación y documentación</h3><p data-i18n="research-copy">Investigamos el problema que enfrentaban los estudiantes y documentamos la necesidad que atendería la plataforma.</p></li>
+            <li><h3 data-i18n="design-title">Diseño y desarrollo</h3><p data-i18n="design-copy">Creamos diagramas y mockups, maquetamos las pantallas y desarrollamos versiones beta de la plataforma.</p></li>
+            <li><h3 data-i18n="test-title">Pruebas y ajustes</h3><p data-i18n="test-copy">Probamos las betas con usuarios reales. A partir de esas pruebas corregimos errores y rediseñamos elementos de la interfaz.</p></li>
           </ol>
         </div>
+        <article class="sql-case" id="caso-sql" aria-labelledby="titulo-caso">
+          <header>
+            <p class="section-kicker"><span data-i18n="case-kicker">Caso SQL · Datos de demostración</span></p>
+            <h3 id="titulo-caso"><span data-i18n="case-title">¿En qué competencia conviene revisar los errores primero?</span></h3>
+            <p data-i18n="case-intro">Esta muestra sintética reúne 80 respuestas en cinco competencias de NeuroLearn. Cada fila representa un intento y registra si la respuesta fue correcta.</p>
+          </header>
+          <table class="case-table">
+            <caption><span data-i18n="case-table">Tasa de error por competencia</span></caption>
+            <thead><tr><th scope="col"><span data-i18n="case-area">Competencia</span></th><th scope="col"><span data-i18n="case-attempts">Intentos</span></th><th scope="col"><span data-i18n="case-errors">Errores</span></th><th scope="col"><span data-i18n="case-rate">Tasa</span></th></tr></thead>
+            <tbody>
+                  <tr data-competencia="ciu"><th scope="row"><span data-i18n="area-ciu">Competencias ciudadanas</span></th><td>2</td><td>1</td><td><span class="rate-track" aria-hidden="true"><i style="width:50%"></i></span><span data-i18n="rate-ciu">50 %</span></td></tr>
+                  <tr data-competencia="mat"><th scope="row"><span data-i18n="area-mat">Pensamiento lógico-matemático</span></th><td>24</td><td>8</td><td><span class="rate-track" aria-hidden="true"><i style="width:33.3%"></i></span><span data-i18n="rate-mat">33,3 %</span></td></tr>
+                  <tr data-competencia="ing"><th scope="row"><span data-i18n="area-ing">Inglés comunicativo</span></th><td>16</td><td>4</td><td><span class="rate-track" aria-hidden="true"><i style="width:25%"></i></span><span data-i18n="rate-ing">25 %</span></td></tr>
+                  <tr data-competencia="lec"><th scope="row"><span data-i18n="area-lec">Comprensión lectora y pensamiento crítico</span></th><td>20</td><td>4</td><td><span class="rate-track" aria-hidden="true"><i style="width:20%"></i></span><span data-i18n="rate-lec">20 %</span></td></tr>
+                  <tr data-competencia="cie"><th scope="row"><span data-i18n="area-cie">Pensamiento científico</span></th><td>18</td><td>3</td><td><span class="rate-track" aria-hidden="true"><i style="width:16.7%"></i></span><span data-i18n="rate-cie">16,7 %</span></td></tr>
+            </tbody>
+          </table>
+          <p class="case-finding"><span data-i18n="case-finding">Revisaría matemáticas primero. Acumula 8 de los 20 errores de la muestra (8 de 24 intentos). Ciudadanas tiene la tasa más alta, 50 %, pero un solo error en dos intentos es poca evidencia para cambiar la enseñanza.</span></p>
+          <details><summary><span data-i18n="case-show">Cómo calculé la tasa · Ver SQL</span></summary>
+            <p data-i18n="case-method">Dividí las respuestas incorrectas por el total de intentos de cada competencia y multipliqué por 100. Una competencia sin intentos queda sin tasa.</p>
+            <pre tabindex="0"><code>WITH resumen AS (
+  SELECT c.codigo, c.nombre, COUNT(r.id) AS intentos,
+         SUM(CASE WHEN r.correcta = 0 THEN 1 ELSE 0 END) AS errores
+  FROM competencias AS c
+  LEFT JOIN respuestas AS r ON r.competencia = c.codigo
+  GROUP BY c.codigo, c.nombre
+)
+SELECT codigo, nombre, intentos, errores,
+       ROUND(100.0 * errores / NULLIF(intentos, 0), 1) AS tasa_error
+FROM resumen
+ORDER BY tasa_error DESC, intentos DESC, codigo;</code></pre>
+          </details>
+          <div class="case-links">
+            <a href="casos/neurolearn/muestra.sql" download><span data-i18n="case-sample">Descargar muestra SQL</span></a>
+            <a href="casos/neurolearn/consulta.sql" download><span data-i18n="case-query">Descargar consulta</span></a>
+            <a href="https://github.com/MatiasRamirezT/Mi-portafolio/tree/main/casos/neurolearn"><span data-i18n="case-reproduce">Reproducir el análisis</span></a>
+          </div>
+        </article>
         <div class="project-evidence">
-          <div class="evidence-head"><h3 data-en="Inside NeuroLearn IA">NeuroLearn IA en uso</h3>
-            <div class="evidence-choices" role="group" aria-label="Capturas del proyecto" data-aria-en="Project screenshots" hidden>
-              <button type="button" aria-controls="vista-acceso" aria-pressed="true" data-gallery-choice="acceso" data-en="Sign-in">Acceso</button>
-              <button type="button" aria-controls="vista-panel" aria-pressed="false" data-gallery-choice="panel" data-en="Student dashboard">Panel del estudiante</button>
-              <button type="button" aria-controls="vista-tutor" aria-pressed="false" data-gallery-choice="tutor" data-en="Math tutor">Tutor de matemáticas</button>
+          <div class="evidence-head"><h3 data-i18n="gallery-title">NeuroLearn IA en uso</h3>
+            <div data-i18n="gallery-group" data-i18n-attr="aria-label" class="evidence-choices" role="group" aria-label="Capturas del proyecto" hidden>
+              <button data-i18n="access-tab" type="button" aria-controls="vista-acceso" aria-pressed="true" data-gallery-choice="acceso">Acceso</button>
+              <button data-i18n="dashboard-tab" type="button" aria-controls="vista-panel" aria-pressed="false" data-gallery-choice="panel">Panel del estudiante</button>
+              <button data-i18n="tutor-tab" type="button" aria-controls="vista-tutor" aria-pressed="false" data-gallery-choice="tutor">Tutor de matemáticas</button>
+              <button type="button" aria-controls="vista-informe" aria-pressed="false" data-gallery-choice="informe"><span data-i18n="report-tab">Informe SQL (demo)</span></button>
             </div>
           </div>
             <figure id="vista-acceso" class="evidence-view">
-              <a class="evidence-image" href="assets/images/neurolearn-acceso.webp"><img src="assets/images/neurolearn-acceso.webp" width="1917" height="871" loading="lazy" alt="Captura de NeuroLearn IA: Acceso" data-alt-en="NeuroLearn IA screenshot: Sign-in"></a>
-              <figcaption><span data-en="Sign in with credentials provided by the school.">Ingreso con las credenciales asignadas por la institución.</span><a href="assets/images/neurolearn-acceso.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+              <a class="evidence-image" href="assets/images/neurolearn-acceso.webp"><img data-i18n="access-alt" data-i18n-attr="alt" src="assets/images/neurolearn-acceso.webp" width="1917" height="871" loading="lazy" alt="Captura de NeuroLearn IA: Acceso"></a>
+              <figcaption><span data-i18n="access-caption">Ingreso con las credenciales asignadas por la institución.</span><a data-i18n="full-size" href="assets/images/neurolearn-acceso.webp">Ver a tamaño completo</a></figcaption>
             </figure>
             <figure id="vista-panel" class="evidence-view">
-              <a class="evidence-image" href="assets/images/neurolearn-panel.webp"><img src="assets/images/neurolearn-panel.webp" width="1917" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Panel del estudiante" data-alt-en="NeuroLearn IA screenshot: Student dashboard"></a>
-              <figcaption><span data-en="An overview of the student’s subject areas, classes and progress.">Competencias, clases y progreso del estudiante en una sola vista.</span><a href="assets/images/neurolearn-panel.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+              <a class="evidence-image" href="assets/images/neurolearn-panel.webp"><img data-i18n="dashboard-alt" data-i18n-attr="alt" src="assets/images/neurolearn-panel.webp" width="1917" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Panel del estudiante"></a>
+              <figcaption><span data-i18n="dashboard-caption">Competencias, clases y progreso del estudiante en una sola vista.</span><a data-i18n="full-size" href="assets/images/neurolearn-panel.webp">Ver a tamaño completo</a></figcaption>
             </figure>
             <figure id="vista-tutor" class="evidence-view">
-              <a class="evidence-image" href="assets/images/neurolearn-tutor.webp"><img src="assets/images/neurolearn-tutor.webp" width="1251" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Tutor de matemáticas" data-alt-en="NeuroLearn IA screenshot: Math tutor"></a>
-              <figcaption><span data-en="A proportional reasoning exercise in the quantitative reasoning chat.">Una actividad de proporcionalidad en el chat de razonamiento cuantitativo.</span><a href="assets/images/neurolearn-tutor.webp" data-en="View full size">Ver a tamaño completo</a></figcaption>
+              <a class="evidence-image" href="assets/images/neurolearn-tutor.webp"><img data-i18n="tutor-alt" data-i18n-attr="alt" src="assets/images/neurolearn-tutor.webp" width="1251" height="872" loading="lazy" alt="Captura de NeuroLearn IA: Tutor de matemáticas"></a>
+              <figcaption><span data-i18n="tutor-caption">Una actividad de proporcionalidad en el chat de razonamiento cuantitativo.</span><a data-i18n="full-size" href="assets/images/neurolearn-tutor.webp">Ver a tamaño completo</a></figcaption>
+            </figure>
+            <figure id="vista-informe" class="evidence-view">
+              <a class="evidence-image" href="assets/images/informe-sql.png"><img src="assets/images/informe-sql.png" loading="lazy" alt="Informe de demostración con cinco competencias y sus tasas de error" data-i18n="report-alt" data-i18n-attr="alt"></a>
+              <figcaption><span data-i18n="report-caption">Captura del análisis de este portafolio con datos sintéticos.</span><a href="#caso-sql"><span data-i18n="report-open">Explorar el informe accesible</span></a></figcaption>
             </figure>
         </div>
         <div class="experience-card project-card">
-          <div class="experience-meta"><p class="section-kicker">PROYECTO DE GRADO · 2026</p><p>Colombia</p><p>Aplicación web instalable</p><a class="project-link" href="https://github.com/YesicaCausado/Proyecto_g" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div>
+          <div class="experience-meta"><p data-i18n="project-meta" class="section-kicker">PROYECTO DE GRADO · 2026</p><p data-i18n="project-country">Colombia</p><p data-i18n="project-pwa">Aplicación web instalable</p><a data-i18n="project-repo" class="project-link" href="https://github.com/YesicaCausado/Proyecto_g" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div>
           <div class="experience-content">
             <article aria-labelledby="titulo-neurolearn">
-              <h3 id="titulo-neurolearn">Aprendizaje que se adapta a cada estudiante.</h3>
-              <p>NeuroLearn IA es una plataforma educativa para apoyar la preparación del Saber 11. Incluye un tutor con inteligencia artificial que adapta la enseñanza al estudiante y herramientas para que docentes hagan seguimiento a grupos y evaluaciones.</p>
+              <h3 data-i18n="project-title" id="titulo-neurolearn">Aprendizaje que se adapta a cada estudiante.</h3>
+              <p data-i18n="project-copy">NeuroLearn IA es una plataforma educativa para apoyar la preparación del Saber 11. Incluye un tutor con inteligencia artificial que adapta la enseñanza al estudiante y herramientas para que docentes hagan seguimiento a grupos y evaluaciones.</p>
               <div class="project-highlights">
-                <div><span>01</span><p>Tutor IA para cinco competencias del Saber 11.</p></div>
-                <div><span>02</span><p>Evaluaciones, NeuroBots y seguimiento del progreso.</p></div>
-                <div><span>03</span><p>Paneles diferenciados para estudiantes y docentes.</p></div>
+                <div><span>01</span><p data-i18n="project-feature-1">Tutor IA para cinco competencias del Saber 11.</p></div>
+                <div><span>02</span><p data-i18n="project-feature-2">Evaluaciones, NeuroBots y seguimiento del progreso.</p></div>
+                <div><span>03</span><p data-i18n="project-feature-3">Paneles diferenciados para estudiantes y docentes.</p></div>
               </div>
-              <p class="project-contribution">Proyecto de grado desarrollado en equipo. El documento de alcance identifica a Matías Ramírez Torres como coautor.</p>
-              <div class="project-stack" aria-label="Tecnologías del proyecto"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span><span>Vite</span></div>
+
+              <div data-i18n="project-tech-aria" data-i18n-attr="aria-label" class="project-stack" aria-label="Tecnologías del proyecto"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span><span>Vite</span></div>
             </article>
           </div>
         </div>
       </section>
 
       <section id="conocimientos" aria-labelledby="titulo-conocimientos">
-        <div class="section-heading"><p class="section-kicker">CAPACIDADES</p><h2 id="titulo-conocimientos">Herramientas para resolver.</h2></div>
+        <div class="section-heading"><p data-i18n="skills-kicker" class="section-kicker">CAPACIDADES</p><h2 data-i18n="skills-heading" id="titulo-conocimientos">Herramientas para resolver.</h2></div>
         <div class="skills-grid">
-        <div class="skill-card"><h3>Bases de datos y programación</h3>
+        <div class="skill-card"><h3 data-i18n="skill-db">Bases de datos y programación</h3>
         <ul>
-          <li>Formación en MySQL y operaciones CRUD: creación, consulta, actualización y eliminación de datos.</li>
-          <li>Conocimientos generales de bases de datos.</li>
-          <li>Principios de programación y lógica.</li>
+          <li data-i18n="skill-db-1">Formación en MySQL y operaciones CRUD: creación, consulta, actualización y eliminación de datos.</li>
+          <li data-i18n="skill-db-2">Conocimientos generales de bases de datos.</li>
+          <li data-i18n="skill-db-3">Principios de programación y lógica.</li>
         </ul></div>
-        <div class="skill-card"><h3>Herramientas y gestión de información</h3>
+        <div class="skill-card"><h3 data-i18n="skill-tools">Herramientas y gestión de información</h3>
         <ul>
-          <li>Registro y seguimiento de solicitudes en software especializado.</li>
-          <li>Manejo avanzado de Microsoft Office.</li>
-          <li>Uso de Google Drive, Microsoft Teams, Zoom y Google Meet.</li>
-          <li>Digitación rápida y precisa y manejo de información digital.</li>
+          <li data-i18n="skill-tools-1">Registro y seguimiento de solicitudes en software especializado.</li>
+          <li data-i18n="skill-tools-2">Manejo avanzado de Microsoft Office.</li>
+          <li data-i18n="skill-tools-3">Uso de Google Drive, Microsoft Teams, Zoom y Google Meet.</li>
+          <li data-i18n="skill-tools-4">Digitación rápida y precisa y manejo de información digital.</li>
         </ul></div>
-        <div class="skill-card"><h3>Atención y colaboración</h3>
+        <div class="skill-card"><h3 data-i18n="skill-service">Atención y colaboración</h3>
         <ul>
-          <li>Orientación al servicio, comunicación efectiva y empatía.</li>
-          <li>Resolución de problemas y manejo de situaciones de crisis.</li>
-          <li>Organización, responsabilidad y proactividad.</li>
-          <li>Trabajo en equipo, adaptabilidad y puntualidad.</li>
+          <li data-i18n="skill-service-1">Orientación al servicio, comunicación efectiva y empatía.</li>
+          <li data-i18n="skill-service-2">Resolución de problemas y manejo de situaciones de crisis.</li>
+          <li data-i18n="skill-service-3">Organización, responsabilidad y proactividad.</li>
+          <li data-i18n="skill-service-4">Trabajo en equipo, adaptabilidad y puntualidad.</li>
         </ul></div>
-        <div class="skill-card"><h3>Idiomas</h3><p>Inglés B2 según EF SET (53/100 en lectura y comprensión auditiva).</p></div>
+        <div class="skill-card"><h3 data-i18n="skill-languages">Idiomas</h3><p data-i18n="skill-language-copy">Inglés B2 según EF SET (53/100 en lectura y comprensión auditiva).</p></div>
         </div>
       </section>
 
       <section id="formacion" aria-labelledby="titulo-formacion">
-        <div class="section-heading"><p class="section-kicker">FORMACIÓN</p><h2 id="titulo-formacion">Estudios y cursos</h2></div>
+        <div class="section-heading"><p data-i18n="education-kicker" class="section-kicker">FORMACIÓN</p><h2 data-i18n="education-heading" id="titulo-formacion">Estudios y cursos</h2></div>
         <div class="study-layout">
           <svg class="study-symbols" aria-hidden="true" focusable="false" width="0" height="0"><defs>
             <symbol id="study-degree" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM5.5 11v5c4 3 9 3 13 0v-5M22 9v7"/></symbol>
@@ -189,77 +238,77 @@
             <symbol id="study-growth" viewBox="0 0 24 24"><path d="M3 4v16h18M6 15l5-5 4 2 6-7M16 5h5v5"/></symbol>
           </defs></svg>
           <div class="degree-panel">
-            <h3 id="titulo-estudios">Formación académica</h3>
+            <h3 data-i18n="degree-heading" id="titulo-estudios">Formación académica</h3>
             <article class="degree-feature">
               <svg class="study-icon" aria-hidden="true" focusable="false" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-degree"/></svg>
-              <p class="degree-dates">Desde <time datetime="2024">2024</time> · En curso</p>
-              <h4 id="titulo-tecnologia">Tecnología en Desarrollo de Software</h4>
-              <p>Universidad Agustiniana</p>
+              <p data-i18n="education-current" class="degree-dates">Desde <time datetime="2024">2024</time> · En curso</p>
+              <h4 data-i18n="education-degree" id="titulo-tecnologia">Tecnología en Desarrollo de Software</h4>
+              <p data-i18n="education-university">Universidad Agustiniana</p>
             </article>
             <article class="degree-secondary">
               <svg class="study-icon" aria-hidden="true" focusable="false" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-book"/></svg>
               <p class="degree-dates"><time datetime="2018">2018</time> — <time datetime="2023">2023</time></p>
-              <h4 id="titulo-bachillerato">Bachiller académico</h4>
-              <p>Colegio Nuestra Señora del Loreto</p>
+              <h4 data-i18n="education-school" id="titulo-bachillerato">Bachiller académico</h4>
+              <p data-i18n="education-school-name">Colegio Nuestra Señora del Loreto</p>
             </article>
           </div>
           <div class="course-panel" id="certificaciones">
-            <h3 id="titulo-certificaciones">Cursos y certificaciones</h3>
+            <h3 data-i18n="cert-heading" id="titulo-certificaciones">Cursos y certificaciones</h3>
             <ul class="course-list">
               <li>
                 <article class="course-card" id="curso-mysql">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-database"/></svg><h4 class="course-title" id="nombre-mysql">Construcción de bases de datos con MySQL</h4></div>
-                  <a class="course-record" href="assets/documents/construccion-bases-de-datos-mysql.pdf" download="construccion-bases-de-datos-mysql.pdf" aria-labelledby="descarga-mysql nombre-mysql"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-mysql">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 48 horas · 2026</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-database"/></svg><h4 data-i18n="cert-mysql" class="course-title" id="nombre-mysql">Construcción de bases de datos con MySQL</h4></div>
+                  <a class="course-record" href="assets/documents/construccion-bases-de-datos-mysql.pdf" download="construccion-bases-de-datos-mysql.pdf" aria-labelledby="descarga-mysql nombre-mysql"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-mysql">Descargar PDF</span></a>
+                  <p data-i18n="cert-mysql-copy" class="course-note">SENA · 48 horas · 2026</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-general">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-tables"/></svg><h4 class="course-title" id="nombre-general">Bases de datos: generalidades y sistemas de gestión</h4></div>
-                  <a class="course-record" href="assets/documents/bases-de-datos-generalidades.pdf" download="bases-de-datos-generalidades.pdf" aria-labelledby="descarga-general nombre-general"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-general">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 40 horas · 2026</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-tables"/></svg><h4 data-i18n="cert-general" class="course-title" id="nombre-general">Bases de datos: generalidades y sistemas de gestión</h4></div>
+                  <a class="course-record" href="assets/documents/bases-de-datos-generalidades.pdf" download="bases-de-datos-generalidades.pdf" aria-labelledby="descarga-general nombre-general"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-general">Descargar PDF</span></a>
+                  <p data-i18n="cert-general-copy" class="course-note">SENA · 40 horas · 2026</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-security">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-shield"/></svg><h4 class="course-title" id="nombre-security">Ciberseguridad Básica</h4></div>
-                  <span class="course-record"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label">PDF pendiente</span></span>
-                  <p class="course-note">Formación básica en ciberseguridad con Netacad.</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-shield"/></svg><h4 data-i18n="cert-security" class="course-title" id="nombre-security">Ciberseguridad Básica</h4></div>
+                  <span class="course-record"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="pdf-pending" class="pdf-label">PDF pendiente</span></span>
+                  <p data-i18n="cert-security-copy" class="course-note">Formación básica en ciberseguridad con Netacad.</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-beginner">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 class="course-title" id="nombre-beginner">English Dot Works Beginner</h4></div>
-                  <a class="course-record" href="assets/documents/english-dot-works-beginner.pdf" download="english-dot-works-beginner.pdf" aria-labelledby="descarga-beginner nombre-beginner"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-beginner">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 60 horas · 2022</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 data-i18n="cert-beginner" class="course-title" id="nombre-beginner">English Dot Works Beginner</h4></div>
+                  <a class="course-record" href="assets/documents/english-dot-works-beginner.pdf" download="english-dot-works-beginner.pdf" aria-labelledby="descarga-beginner nombre-beginner"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-beginner">Descargar PDF</span></a>
+                  <p data-i18n="cert-beginner-copy" class="course-note">SENA · 60 horas · 2022</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-english1">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 class="course-title" id="nombre-english1">English Dot Works 1</h4></div>
-                  <a class="course-record" href="assets/documents/english-dot-works-1.pdf" download="english-dot-works-1.pdf" aria-labelledby="descarga-english1 nombre-english1"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-english1">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 60 horas · 2022</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 data-i18n="cert-english1" class="course-title" id="nombre-english1">English Dot Works 1</h4></div>
+                  <a class="course-record" href="assets/documents/english-dot-works-1.pdf" download="english-dot-works-1.pdf" aria-labelledby="descarga-english1 nombre-english1"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-english1">Descargar PDF</span></a>
+                  <p data-i18n="cert-english1-copy" class="course-note">SENA · 60 horas · 2022</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-ef">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 class="course-title" id="nombre-ef">EF SET · Inglés B2</h4></div>
-                  <a class="course-record" href="assets/documents/ef-set-b2.pdf" download="ef-set-b2.pdf" aria-labelledby="descarga-ef nombre-ef"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-ef">Descargar PDF</span></a>
-                  <p class="course-note">EF SET · 53/100 en lectura y comprensión auditiva · 2025</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-speech"/></svg><h4 data-i18n="cert-ef" class="course-title" id="nombre-ef">EF SET · Inglés B2</h4></div>
+                  <a class="course-record" href="assets/documents/ef-set-b2.pdf" download="ef-set-b2.pdf" aria-labelledby="descarga-ef nombre-ef"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-ef">Descargar PDF</span></a>
+                  <p data-i18n="cert-ef-copy" class="course-note">EF SET · 53/100 en lectura y comprensión auditiva · 2025</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-innovation">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-idea"/></svg><h4 class="course-title" id="nombre-innovation">Emprendimiento Innovador</h4></div>
-                  <a class="course-record" href="assets/documents/emprendimiento-innovador.pdf" download="emprendimiento-innovador.pdf" aria-labelledby="descarga-innovation nombre-innovation"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-innovation">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 40 horas · 2022</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-idea"/></svg><h4 data-i18n="cert-innovation" class="course-title" id="nombre-innovation">Emprendimiento Innovador</h4></div>
+                  <a class="course-record" href="assets/documents/emprendimiento-innovador.pdf" download="emprendimiento-innovador.pdf" aria-labelledby="descarga-innovation nombre-innovation"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-innovation">Descargar PDF</span></a>
+                  <p data-i18n="cert-innovation-copy" class="course-note">SENA · 40 horas · 2022</p>
                 </article>
               </li>
               <li>
                 <article class="course-card" id="curso-business">
-                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-growth"/></svg><h4 class="course-title" id="nombre-business">Comportamiento Emprendedor</h4></div>
-                  <a class="course-record" href="assets/documents/comportamiento-emprendedor.pdf" download="comportamiento-emprendedor.pdf" aria-labelledby="descarga-business nombre-business"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span class="pdf-label" id="descarga-business">Descargar PDF</span></a>
-                  <p class="course-note">SENA · 48 horas · 2023</p>
+                  <div class="course-heading"><svg class="study-icon" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><use href="#study-growth"/></svg><h4 data-i18n="cert-business" class="course-title" id="nombre-business">Comportamiento Emprendedor</h4></div>
+                  <a class="course-record" href="assets/documents/comportamiento-emprendedor.pdf" download="comportamiento-emprendedor.pdf" aria-labelledby="descarga-business nombre-business"><svg class="pdf-mark" width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1h8l4 4v14H2zM10 1v5h4M5 11h6M5 14h4"/></svg><span data-i18n="download-pdf" class="pdf-label" id="descarga-business">Descargar PDF</span></a>
+                  <p data-i18n="cert-business-copy" class="course-note">SENA · 48 horas · 2023</p>
                 </article>
               </li>
             </ul>
@@ -268,42 +317,42 @@
       </section>
 
       <section id="contacto" aria-labelledby="titulo-contacto">
-        <div class="section-heading"><p class="section-kicker">CONTACTO</p><h2 id="titulo-contacto">¿Hablamos?</h2></div>
+        <div class="section-heading"><p data-i18n="contact-kicker" class="section-kicker">CONTACTO</p><h2 data-i18n="contact-heading" id="titulo-contacto">¿Hablamos?</h2></div>
         <div class="contact-card">
         <div class="contact-intro">
-          <p>Busco oportunidades en bases de datos, gestión de información y análisis de datos. También me interesan los proyectos donde pueda seguir aprendiendo backend.</p>
-          <p class="contact-location">Bogotá D. C., Colombia <span aria-hidden="true">·</span> Disponibilidad para horarios rotativos</p>
+          <p data-i18n="contact-copy">Busco oportunidades en bases de datos, gestión de información y análisis de datos. También me interesan los proyectos donde pueda seguir aprendiendo backend.</p>
+          <p data-i18n="availability" class="contact-location">Bogotá D. C., Colombia <span aria-hidden="true">·</span> Disponibilidad para horarios rotativos</p>
         </div>
-        <div class="contact-methods" aria-label="Medios de contacto">
+        <div data-i18n="contact-methods-aria" data-i18n-attr="aria-label" class="contact-methods" aria-label="Medios de contacto">
           <a class="contact-method" href="mailto:matias_r.m5@hotmail.com">
             <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3.75 6.75h16.5v11.5H3.75z"/><path d="m4.5 7.5 7.5 6 7.5-6"/></svg></span>
-            <span><span class="contact-label">Correo directo</span><strong>matias_r.m5@hotmail.com</strong></span>
+            <span><span data-i18n="email-label" class="contact-label">Correo directo</span><strong>matias_r.m5@hotmail.com</strong></span>
             <span class="contact-arrow" aria-hidden="true">↗</span>
           </a>
           <a class="contact-method" href="https://github.com/MatiasRamirezT" target="_blank" rel="noreferrer">
             <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.31-3.76-1.31-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.61 1.21 3.25.92.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.29-2.61 5.23-5.1 5.51.4.34.76 1.02.76 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></span>
-            <span><span class="contact-label">GitHub</span><strong>MatiasRamirezT</strong></span>
+            <span><span data-i18n="github-label" class="contact-label">GitHub</span><strong>MatiasRamirezT</strong></span>
             <span class="contact-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
         </div>
         <form class="contact-form" action="mailto:matias_r.m5@hotmail.com" method="post" enctype="text/plain" aria-labelledby="titulo-formulario">
           <div class="form-intro">
-            <h3 id="titulo-formulario" data-en="Write to me">Escríbeme</h3>
-            <p data-en="This opens a draft in your email app so you can review and send it.">Se abrirá un borrador en tu aplicación de correo para que puedas revisarlo y enviarlo.</p>
+            <h3 data-i18n="form-title" id="titulo-formulario">Escríbeme</h3>
+            <p data-i18n="form-help">Se abrirá un borrador en tu aplicación de correo para que puedas revisarlo y enviarlo.</p>
           </div>
           <div class="form-fields">
-            <label><span data-en="Your name">Tu nombre</span><input name="name" type="text" autocomplete="name" maxlength="100" required></label>
-            <label><span data-en="Your email">Tu correo</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
-            <label class="form-message"><span data-en="Message">Mensaje</span><textarea name="message" rows="5" required></textarea></label>
-            <button class="action-primary" type="submit" data-en="Open email draft">Abrir borrador de correo</button>
+            <label><span data-i18n="form-name">Tu nombre</span><input name="name" type="text" autocomplete="name" maxlength="100" required></label>
+            <label><span data-i18n="form-email">Tu correo</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label class="form-message"><span data-i18n="form-message">Mensaje</span><textarea name="message" rows="5" required></textarea></label>
+            <button data-i18n="form-action" class="action-primary" type="submit">Abrir borrador de correo</button>
           </div>
         </form>
       </section>
     </main>
 
     <footer>
-      <p>Matías Ramírez Torres · Bogotá, Colombia</p><p><a href="#perfil">Volver al inicio ↑</a></p>
+      <p>Matías Ramírez Torres · Bogotá, Colombia</p><p><a data-i18n="footer-back" href="#perfil">Volver al inicio ↑</a></p>
     </footer>
   </body>
 </html>

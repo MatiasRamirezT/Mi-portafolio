@@ -26,13 +26,13 @@ body { isolation: isolate; }
   position: fixed;
   left: 0;
   top: 0;
-  width: 210px;
-  height: 210px;
+  width: 138px;
+  height: 138px;
   z-index: 20;
   pointer-events: none;
   border-radius: 50%;
   opacity: 0;
-  background: radial-gradient(circle, #ff354c38, #f0253b19 35%, #e41e3009 57%, transparent 72%);
+  background: radial-gradient(circle, #ff354c20, #f0253b0e 35%, #e41e3005 57%, transparent 72%);
 }
 .plasma-light.is-visible { opacity: 1; }
 
@@ -76,6 +76,9 @@ body { isolation: isolate; }
 @keyframes plasma-entrance {
   from { opacity: .15; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  #titulo-perfil > span { text-shadow: 0 0 2px #fc314977, 0 0 5px #ef203633; }
 }
 @media (max-width: 370px) {
   #titulo-perfil > span { white-space: normal; }

@@ -1,64 +1,40 @@
-# Portafolio de Matías Ramírez Torres
+# Matías Ramírez Torres · Analista de Datos y Desarrollador
 
-Portafolio profesional orientado a soporte de software y mesa de ayuda. Presenta perfil, experiencia, capacidades, formación y contacto.
+Portafolio en español e inglés sobre bases de datos, análisis de información y desarrollo backend. Mi experiencia destacada es NeuroLearn IA, proyecto de grado en el que trabajé en la integración de PostgreSQL con Supabase y en la autenticación.
 
-## Estructura
+[Visitar el portafolio](https://matiasramirezt.github.io/Mi-portafolio/) · [Explorar el caso SQL](https://matiasramirezt.github.io/Mi-portafolio/#caso-sql) · [Ver mi contribución a NeuroLearn](https://github.com/YesicaCausado/Proyecto_g/commit/0cb81057716737cd7bfaeb126631b646771a3f25)
 
-```text
-Mi-portafolio/
-├── index.html                 # Contenido público y estructura semántica
-├── README.md                  # Instrucciones del proyecto
-├── .gitignore                 # Archivos locales que Git debe ignorar
-├── assets/
-│   ├── css/
-│   │   ├── tokens.css         # Variables del futuro sistema visual
-│   │   └── main.css           # Estilos, componentes y responsive
-│   │   └── main.js            # Navegación y formulario
-│   │   └── signal-intro.js    # Animación de señal a tendencia
-│   ├── js/
-│   │   └── main.js            # Menú compacto y formulario de correo
-│   ├── images/                # Fotografías y capturas optimizadas
-│   ├── icons/                 # Iconos SVG y favicon
-│   ├── fonts/                 # Fuentes autoalojadas y sus licencias
-│   └── documents/             # Documentos destinados a descarga pública
-└── docs/
-    ├── contenido.md           # Inventario de contenido y pendientes
-    └── diseno.md              # Plan visual y criterios de revisión
-```
+![Portada del portafolio con el perfil profesional y la armadura de partículas](assets/images/portada.jpg)
 
-Las carpetas reservadas contienen `.gitkeep`, un marcador para que Git las conserve
-mientras están vacías. Se puede eliminar al añadir el primer archivo real.
+## Trabajo destacado
+
+- **Análisis SQL.** ¿Qué competencia conviene revisar primero? Una muestra sintética de 80 respuestas permite contrastar el volumen de errores con la tasa de error. Los datos, la consulta y las instrucciones se pueden descargar y reproducir. [Abrir caso](casos/neurolearn/)
+- **Desarrollo en equipo.** NeuroLearn IA es una aplicación educativa para preparar el Saber 11. El portafolio reúne el proceso de marzo a noviembre de 2026, tres capturas del producto y una captura independiente del informe de demostración. [Repositorio del equipo](https://github.com/YesicaCausado/Proyecto_g)
 
 ## Desarrollo local
 
-No se necesitan dependencias, instalación ni compilación.
-Se puede abrir `index.html` directamente en un navegador.
-Para comprobar la página mediante HTTP, desde la raíz del repositorio:
+El sitio usa HTML, CSS y JavaScript. Desde la raíz, sirve los archivos con Python 3 y abre `http://localhost:8000`.
 
 ```sh
-python3 -m http.server 8000 --bind 127.0.0.1
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Detener el servidor con `Ctrl+C` al terminar.
+Para comprobar los resultados SQL, las traducciones y los enlaces locales:
 
-## Reglas para añadir archivos
+```sh
+python -m unittest discover -s tests
+```
 
-- Usar nombres en minúsculas, sin espacios ni tildes, separados por guiones: `proyecto-soporte.webp`.
-- Mantener las rutas relativas, como `assets/images/proyecto-soporte.webp`, para admitir un sitio en un subdirectorio.
-- Conservar el contenido público en `index.html`; las notas de trabajo van en `docs/`.
-- Definir valores visuales compartidos en `tokens.css` y consumirlos desde `main.css`.
-- Guardar fotografías y capturas preferentemente en WebP o AVIF; iconos en SVG.
-- Añadir fuentes WOFF2 junto con su licencia cuando se haya elegido la tipografía.
-- Guardar en `assets/documents/` solo documentos que se quieran hacer públicos.
-- No añadir enlaces a imágenes, certificados o documentos hasta que existan sus archivos.
-- El correo incluido en el HTML será visible al publicar el sitio. El formulario prepara un borrador en la aplicación de correo del visitante; no envía datos a un servidor.
+## Estructura
 
-## Estado y próximos pasos
+| Ruta | Contenido |
+| --- | --- |
+| `index.html` | Contenido base en español, navegación, galería y formulario de contacto |
+| `assets/css/` | Paleta y tipografía, diseño adaptable y efectos de plasma |
+| `assets/js/` | Interacción, armadura de partículas, selector de idioma y diccionario inglés |
+| `assets/images/` | Retrato, circuitos y capturas |
+| `assets/documents/` | Copias públicas de los certificados |
+| `casos/neurolearn/` | Muestra sintética, consulta SQL y guía de reproducción |
+| `tests/` | Comprobaciones con la biblioteca estándar de Python |
 
-- El HTML contiene perfil, experiencia, conocimientos, formación, certificaciones y contacto.
-- La identidad visual combina negro y rojo con una señal visual que conecta soporte de usuarios y análisis de datos.
-- La portada presenta perfil, enfoque profesional y navegación centrada.
-- La navegación centrada se compacta en una cápsula horizontal y conserva sus enlaces visibles al desplazarse.
-- El formulario prepara el mensaje en la aplicación de correo del visitante; no necesita un servicio externo.
-- El diseño inicial y sus criterios están documentados en `docs/diseno.md`.
-- Esta estructura no configura despliegues ni publica el sitio. La publicación del entorno de desarrollo es independiente de la publicación de la web.
+El formulario prepara un borrador en la aplicación de correo del visitante. Las decisiones de [contenido](docs/contenido.md) y [diseño](docs/diseno.md) se documentan por separado.
